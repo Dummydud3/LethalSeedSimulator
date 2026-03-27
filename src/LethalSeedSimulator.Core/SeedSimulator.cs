@@ -4,33 +4,75 @@ namespace LethalSeedSimulator.Core;
 
 public sealed class SeedSimulator
 {
-    public SeedReport Simulate(RulePack rules, string levelId, int seed)
+    private readonly WeatherSimulator weatherSimulator = new();
+    private readonly EnemySpawnSimulator enemySpawnSimulator = new();
+    private readonly HazardPropSimulator hazardPropSimulator = new();
+    private readonly KeySimulator keySimulator = new();
+
+    public SeedReport Simulate(RulePack rules, string levelId, int seed) =>
+        Simulate(rules, new SimulationRequest
+        {
+            LevelId = levelId,
+            RunSeed = seed,
+            WeatherSeed = Math.Max(seed - 1, 0),
+            IsChallengeFile = false,
+            ConnectedPlayersOnServer = 0,
+            DaysPlayersSurvivedInARow = 0
+        });
+
+    public SeedReport Simulate(RulePack rules, SimulationRequest request)
     {
-        var level = rules.Levels.FirstOrDefault(x => string.Equals(x.Id, levelId, StringComparison.OrdinalIgnoreCase))
-            ?? rules.Levels.FirstOrDefault(x => string.Equals(x.Name, levelId, StringComparison.OrdinalIgnoreCase))
-            ?? throw new InvalidOperationException($"Unknown level id '{levelId}'.");
+        var level = rules.Levels.FirstOrDefault(x => string.Equals(x.Id, request.LevelId, StringComparison.OrdinalIgnoreCase))
+            ?? rules.Levels.FirstOrDefault(x => string.Equals(x.Name, request.LevelId, StringComparison.OrdinalIgnoreCase))
+            ?? throw new InvalidOperationException($"Unknown level id '{request.LevelId}'.");
 
         if (level.SpawnableScrap.Count == 0)
         {
-            throw new InvalidOperationException($"Level '{levelId}' has no spawnable scrap configured.");
+            throw new InvalidOperationException($"Level '{request.LevelId}' has no spawnable scrap configured.");
         }
 
-        var anomalyRandom = new Random(seed + rules.Offsets.AnomalyRandom);
-        var weatherRandom = new Random(seed + rules.Offsets.WeatherRandom);
+        var runSeed = request.RunSeed;
+        var weatherSeed = request.WeatherSeed ?? Math.Max(runSeed - 1, 0);
+        var anomalyRandom = new Random(runSeed + rules.Offsets.AnomalyRandom);
+        var levelRandom = new Random(runSeed + rules.Offsets.LevelRandom);
+        var weatherReport = weatherSimulator.Simulate(rules, new SimulationRequest
+        {
+            LevelId = request.LevelId,
+            RunSeed = request.RunSeed,
+            WeatherSeed = weatherSeed,
+            IsChallengeFile = request.IsChallengeFile,
+            ConnectedPlayersOnServer = request.ConnectedPlayersOnServer,
+            DaysPlayersSurvivedInARow = request.DaysPlayersSurvivedInARow
+        });
 
-        var weather = RollWeather(level, weatherRandom);
-        var scrapCount = anomalyRandom.Next(level.MinScrap, level.MaxScrapExclusive);
+        var weather = weatherReport.AssignedWeatherByLevelId.TryGetValue(level.Id, out var w) ? w : "None";
+        var currentDungeonType = RollDungeonType(level, levelRandom);
+        var increasedScrapSpawnRateIndex = request.IsChallengeFile && level.SpawnableScrap.Count > 0
+            ? anomalyRandom.Next(0, level.SpawnableScrap.Count)
+            : -1;
+
+        var scrapCount = (int)(anomalyRandom.Next(level.MinScrap, level.MaxScrapExclusive) * rules.GlobalRules.ScrapAmountMultiplier);
+        if (currentDungeonType == 4)
+        {
+            scrapCount += 6;
+        }
+        scrapCount = Math.Max(scrapCount, 0);
 
         var fixedIndex = RollForcedScrapIndex(level, anomalyRandom);
-        var scrapWeights = level.SpawnableScrap.Select(x => x.Rarity).ToArray();
+        var scrapWeights = BuildScrapWeights(level, increasedScrapSpawnRateIndex);
 
         var results = new List<ScrapRollResult>(scrapCount);
-        var total = 0;
+        var values = new List<int>(scrapCount);
         for (var i = 0; i < scrapCount; i++)
         {
             var index = fixedIndex ?? WeightedPicker.GetRandomWeightedIndex(scrapWeights, anomalyRandom);
             var scrap = level.SpawnableScrap[index];
-            var value = anomalyRandom.Next(scrap.MinValueInclusive, scrap.MaxValueExclusive);
+            var rawValue = anomalyRandom.Next(scrap.MinValueInclusive, scrap.MaxValueExclusive);
+            var value = (int)(rawValue * rules.GlobalRules.ScrapValueMultiplier);
+            if (fixedIndex is not null)
+            {
+                value = Math.Clamp(value, 50, 170);
+            }
 
             results.Add(new ScrapRollResult
             {
@@ -38,19 +80,57 @@ public sealed class SeedSimulator
                 ItemName = scrap.ItemName,
                 Value = value
             });
-
-            total += value;
+            values.Add(value);
         }
+
+        if (fixedIndex is not null && values.Count > 0)
+        {
+            var fixedItem = level.SpawnableScrap[fixedIndex.Value];
+            var minTotal = fixedItem.TwoHanded ? 1500f : 600f;
+            var totalFixed = values.Sum();
+            if (totalFixed > 4500)
+            {
+                for (var i = 0; i < values.Count; i++)
+                {
+                    values[i] = (int)(values[i] * 0.7f);
+                }
+            }
+            else if (totalFixed < minTotal)
+            {
+                for (var i = 0; i < values.Count; i++)
+                {
+                    values[i] = (int)(values[i] * 1.4f);
+                }
+            }
+
+            for (var i = 0; i < results.Count; i++)
+            {
+                results[i] = new ScrapRollResult
+                {
+                    ItemId = results[i].ItemId,
+                    ItemName = results[i].ItemName,
+                    Value = values[i]
+                };
+            }
+        }
+
+        var total = values.Sum();
 
         return new SeedReport
         {
             Version = rules.Metadata.RuleSetVersion,
-            LevelId = levelId,
-            Seed = seed,
+            LevelId = level.Id,
+            Seed = runSeed,
+            RunSeed = runSeed,
+            WeatherSeed = weatherSeed,
             Weather = weather,
             ScrapCount = scrapCount,
             TotalScrapValue = total,
-            ScrapRolls = results
+            ScrapRolls = results,
+            EnemySpawn = enemySpawnSimulator.Simulate(rules, level, runSeed),
+            HazardProp = hazardPropSimulator.Simulate(rules, level, runSeed),
+            WeatherReport = weatherReport,
+            Keys = keySimulator.Simulate(level, runSeed, rules.Offsets.LevelRandom)
         };
     }
 
@@ -83,14 +163,37 @@ public sealed class SeedSimulator
         return candidate;
     }
 
-    private static string RollWeather(LevelRule level, Random weatherRandom)
+    private static int[] BuildScrapWeights(LevelRule level, int increasedScrapSpawnRateIndex)
     {
-        if (level.Weathers.Count == 0)
+        var weights = new int[level.SpawnableScrap.Count];
+        for (var i = 0; i < level.SpawnableScrap.Count; i++)
         {
-            return "None";
+            if (i == increasedScrapSpawnRateIndex)
+            {
+                weights[i] = 100;
+                continue;
+            }
+
+            var baseRarity = level.SpawnableScrap[i].Rarity;
+            var isGoldBar = level.SpawnableScrap[i].ItemId == 152767;
+            weights[i] = isGoldBar
+                ? Math.Min(baseRarity + 30, 99)
+                : baseRarity;
         }
 
-        var index = WeightedPicker.GetRandomWeightedIndex(level.Weathers.Select(x => x.Weight).ToArray(), weatherRandom);
-        return level.Weathers[index].WeatherType;
+        return weights;
     }
+
+    private static int RollDungeonType(LevelRule level, Random levelRandom)
+    {
+        if (level.DungeonFlowTypes.Count == 0)
+        {
+            return 0;
+        }
+
+        var weights = level.DungeonFlowTypes.Select(x => x.Rarity).ToArray();
+        var index = WeightedPicker.GetRandomWeightedIndex(weights, levelRandom);
+        return level.DungeonFlowTypes[Math.Clamp(index, 0, level.DungeonFlowTypes.Count - 1)].Id;
+    }
+
 }

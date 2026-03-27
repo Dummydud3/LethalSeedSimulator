@@ -1,6 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Globalization;
 using LethalSeedSimulator.Rules;
 
 namespace LethalSeedSimulator.Extractor;
@@ -16,6 +17,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         var roundManagerPath = Path.Combine(sourceRootPath, "Assembly-CSharp", "RoundManager.cs");
         var levelTypePath = Path.Combine(sourceRootPath, "Assembly-CSharp", "SelectableLevel.cs");
         var monoBehaviourPath = Path.Combine(sourceRootPath, "Assets", "MonoBehaviour");
+        var sampleScenePath = Path.Combine(sourceRootPath, "Assets", "Scenes", "SampleSceneRelay.unity");
 
         if (!File.Exists(roundManagerPath))
         {
@@ -34,6 +36,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
 
         var roundManager = File.ReadAllText(roundManagerPath);
         var levelType = File.ReadAllText(levelTypePath);
+        var sampleScene = File.Exists(sampleScenePath) ? File.ReadAllText(sampleScenePath) : string.Empty;
 
         var offsets = new RngOffsets
         {
@@ -59,11 +62,12 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             {
                 RuleSetVersion = AdapterVersion,
                 GameVersionLabel = "decompiled-dump",
-                SourceSignature = BuildSourceSignature(roundManager, levelType, string.Join("|", itemByGuid.Keys.OrderBy(x => x)), string.Join("|", levels.Select(x => x.Id))),
+                SourceSignature = BuildSourceSignature(roundManager, levelType, sampleScene, string.Join("|", itemByGuid.Keys.OrderBy(x => x)), string.Join("|", levels.Select(x => x.Id))),
                 ExtractedAtUtc = DateTimeOffset.UtcNow
             },
             Offsets = offsets,
-            Levels = levels
+            Levels = levels,
+            GlobalRules = ParseGlobalRules(roundManager, sampleScene)
         };
     }
 
@@ -109,6 +113,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
 
             var itemName = ExtractStringField(content, "itemName") ?? Path.GetFileNameWithoutExtension(assetPath);
             var twoHanded = ExtractIntField(content, "twoHanded") == 1;
+            var rawItemId = ExtractIntField(content, "itemId");
             var minValue = ExtractIntField(content, "minValue");
             var maxValue = ExtractIntField(content, "maxValue");
             if (maxValue <= minValue)
@@ -116,14 +121,14 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
                 maxValue = minValue + 1;
             }
 
-            var itemId = BuildStableItemId(guid, itemName);
+            var itemId = rawItemId > 0 ? rawItemId : BuildStableItemId(guid);
             map[guid] = new ScrapRule
             {
                 ItemId = itemId,
                 ItemName = itemName,
                 Rarity = 1,
                 MinValueInclusive = minValue,
-                MaxValueExclusive = maxValue + 1,
+                MaxValueExclusive = maxValue,
                 TwoHanded = twoHanded
             };
         }
@@ -157,9 +162,19 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
                 Name = planetName,
                 MinScrap = minScrap,
                 MaxScrapExclusive = maxScrap,
+                MinTotalScrapValue = ExtractIntField(content, "minTotalScrapValue"),
+                MaxTotalScrapValue = ExtractIntField(content, "maxTotalScrapValue"),
                 IsChallengeFile = false,
                 SpawnableScrap = ParseSpawnableScrap(content, itemByGuid),
-                Weathers = ParseWeatherRules(content)
+                Weathers = ParseWeatherRules(content),
+                OverrideWeather = ExtractIntField(content, "overrideWeather") == 1,
+                OverrideWeatherType = WeatherName(ExtractIntField(content, "overrideWeatherType")),
+                InsideEnemies = ParseEnemyRules(content, "Enemies:", "OutsideEnemies:"),
+                OutsideEnemies = ParseEnemyRules(content, "OutsideEnemies:", "DaytimeEnemies:"),
+                DaytimeEnemies = ParseEnemyRules(content, "DaytimeEnemies:", "maxOutsideEnemyPowerCount:"),
+                SpawnableMapObjects = ParseMapObjectRules(content),
+                SpawnableOutsideObjectsCount = ParseOutsideObjectCount(content),
+                DungeonFlowTypes = ParseDungeonFlowRules(content)
             };
 
             if (level.SpawnableScrap.Count > 0)
@@ -231,6 +246,145 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         return list;
     }
 
+    private static List<EnemyRule> ParseEnemyRules(string levelAssetContent, string start, string end)
+    {
+        var section = ExtractSection(levelAssetContent, start, end);
+        if (string.IsNullOrWhiteSpace(section))
+        {
+            return [];
+        }
+
+        var matches = Regex.Matches(
+            section,
+            "-\\s*enemyType:\\s*\\{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{32}),\\s*type:\\s*2\\}\\s*\\r?\\n\\s*rarity:\\s*(\\d+)",
+            RegexOptions.IgnoreCase);
+        var list = new List<EnemyRule>();
+        foreach (Match match in matches)
+        {
+            list.Add(new EnemyRule
+            {
+                Id = match.Groups[1].Value,
+                Rarity = int.Parse(match.Groups[2].Value)
+            });
+        }
+
+        return list;
+    }
+
+    private static List<MapObjectRule> ParseMapObjectRules(string levelAssetContent)
+    {
+        var section = ExtractSection(levelAssetContent, "spawnableMapObjects:", "spawnableOutsideObjects:");
+        if (string.IsNullOrWhiteSpace(section))
+        {
+            return [];
+        }
+
+        var idMatches = Regex.Matches(
+            section,
+            "-\\s*prefabToSpawn:\\s*\\{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{32}),\\s*type:\\s*2\\}",
+            RegexOptions.IgnoreCase);
+        var keys = Regex.Matches(section, "value:\\s*(-?\\d+(?:\\.\\d+)?)");
+        var maxObjectsEstimate = 0;
+        foreach (Match key in keys)
+        {
+            var v = double.Parse(key.Groups[1].Value, CultureInfo.InvariantCulture);
+            maxObjectsEstimate = Math.Max(maxObjectsEstimate, (int)Math.Round(v));
+        }
+        maxObjectsEstimate = Math.Max(maxObjectsEstimate, 1);
+
+        var list = new List<MapObjectRule>();
+        foreach (Match id in idMatches)
+        {
+            list.Add(new MapObjectRule
+            {
+                Id = id.Groups[1].Value,
+                MaxObjectsEstimate = maxObjectsEstimate
+            });
+        }
+
+        return list;
+    }
+
+    private static List<DungeonFlowRule> ParseDungeonFlowRules(string levelAssetContent)
+    {
+        var section = ExtractSection(levelAssetContent, "dungeonFlowTypes:", "spawnableMapObjects:");
+        if (string.IsNullOrWhiteSpace(section))
+        {
+            return [];
+        }
+
+        var matches = Regex.Matches(
+            section,
+            "-\\s*id:\\s*(-?\\d+)\\s*\\r?\\n\\s*rarity:\\s*(\\d+)",
+            RegexOptions.IgnoreCase);
+        var list = new List<DungeonFlowRule>();
+        foreach (Match match in matches)
+        {
+            list.Add(new DungeonFlowRule
+            {
+                Id = int.Parse(match.Groups[1].Value),
+                Rarity = int.Parse(match.Groups[2].Value)
+            });
+        }
+
+        return list;
+    }
+
+    private static int ParseOutsideObjectCount(string levelAssetContent)
+    {
+        var section = ExtractSection(levelAssetContent, "spawnableOutsideObjects:", "spawnableOutsideWaterObjects:");
+        if (string.IsNullOrWhiteSpace(section))
+        {
+            return 0;
+        }
+
+        var matches = Regex.Matches(
+            section,
+            "-\\s*spawnableObject:\\s*\\{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{32}),\\s*type:\\s*2\\}",
+            RegexOptions.IgnoreCase);
+        return matches.Count;
+    }
+
+    private static GlobalRules ParseGlobalRules(string roundManagerCode, string sampleScene)
+    {
+        var sceneSettings = ParseSceneRoundManagerSettings(sampleScene);
+        var scrapAmountFromCode = ParseFloat(roundManagerCode, "scrapAmountMultiplier\\s*=\\s*([0-9]+(?:\\.[0-9]+)?)", 1f);
+        return new GlobalRules
+        {
+            ScrapAmountMultiplier = sceneSettings.ScrapAmountMultiplier ?? scrapAmountFromCode,
+            ScrapValueMultiplier = sceneSettings.ScrapValueMultiplier ?? 0.4f,
+            MapSizeMultiplier = sceneSettings.MapSizeMultiplier ?? 1f,
+            HourTimeBetweenEnemySpawnBatches = sceneSettings.HourTimeBetweenEnemySpawnBatches ?? 2f,
+            MinEnemiesToSpawn = sceneSettings.MinEnemiesToSpawn ?? 0,
+            MinOutsideEnemiesToSpawn = sceneSettings.MinOutsideEnemiesToSpawn ?? 0,
+            PowerOffAtStartChance = 0.08f
+        };
+    }
+
+    private static SceneRoundManagerSettings ParseSceneRoundManagerSettings(string sampleScene)
+    {
+        if (string.IsNullOrWhiteSpace(sampleScene))
+        {
+            return new SceneRoundManagerSettings();
+        }
+
+        var blockMatch = Regex.Match(
+            sampleScene,
+            "m_Script:\\s*\\{fileID:\\s*11500000,\\s*guid:\\s*c772563b62eda8b681c04c691cd6f847,\\s*type:\\s*3\\}(?<body>[\\s\\S]*?)---\\s*!u!",
+            RegexOptions.IgnoreCase);
+
+        var block = blockMatch.Success ? blockMatch.Groups["body"].Value : sampleScene;
+        return new SceneRoundManagerSettings
+        {
+            ScrapValueMultiplier = ParseFloat(block, "^\\s*scrapValueMultiplier:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
+            ScrapAmountMultiplier = ParseFloat(block, "^\\s*scrapAmountMultiplier:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
+            MapSizeMultiplier = ParseFloat(block, "^\\s*mapSizeMultiplier:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
+            HourTimeBetweenEnemySpawnBatches = ParseFloat(block, "^\\s*hourTimeBetweenEnemySpawnBatches:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
+            MinEnemiesToSpawn = ParseInt(block, "^\\s*minEnemiesToSpawn:\\s*(-?\\d+)$"),
+            MinOutsideEnemiesToSpawn = ParseInt(block, "^\\s*minOutsideEnemiesToSpawn:\\s*(-?\\d+)$")
+        };
+    }
+
     private static string ExtractSection(string content, string startMarker, string endMarker)
     {
         var start = content.IndexOf(startMarker, StringComparison.Ordinal);
@@ -267,13 +421,27 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         return match.Success ? int.Parse(match.Groups[1].Value) : 0;
     }
 
-    private static int BuildStableItemId(string guid, string itemName)
+    private static float ParseFloat(string input, string pattern, float fallback)
     {
-        if (itemName.Equals("Gold bar", StringComparison.OrdinalIgnoreCase))
-        {
-            return 152767;
-        }
+        var match = Regex.Match(input, pattern);
+        return match.Success ? float.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture) : fallback;
+    }
 
+    private static float? ParseFloat(string input, string pattern, float? fallback, bool multiline)
+    {
+        var options = multiline ? RegexOptions.Multiline : RegexOptions.None;
+        var match = Regex.Match(input, pattern, options);
+        return match.Success ? float.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture) : fallback;
+    }
+
+    private static int? ParseInt(string input, string pattern)
+    {
+        var match = Regex.Match(input, pattern, RegexOptions.Multiline);
+        return match.Success ? int.Parse(match.Groups[1].Value) : null;
+    }
+
+    private static int BuildStableItemId(string guid)
+    {
         var prefix = guid[..8];
         return Convert.ToInt32(prefix, 16) & 0x7FFFFFFF;
     }
@@ -296,5 +464,20 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         var blob = string.Join("\n--\n", filesContent);
         var bytes = Encoding.UTF8.GetBytes(blob);
         return Convert.ToHexString(sha.ComputeHash(bytes));
+    }
+
+    private sealed class SceneRoundManagerSettings
+    {
+        public float? ScrapValueMultiplier { get; init; }
+
+        public float? ScrapAmountMultiplier { get; init; }
+
+        public float? MapSizeMultiplier { get; init; }
+
+        public float? HourTimeBetweenEnemySpawnBatches { get; init; }
+
+        public int? MinEnemiesToSpawn { get; init; }
+
+        public int? MinOutsideEnemiesToSpawn { get; init; }
     }
 }

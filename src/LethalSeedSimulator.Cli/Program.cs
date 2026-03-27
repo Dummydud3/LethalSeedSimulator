@@ -71,10 +71,21 @@ void RunInspect(Dictionary<string, string> options, JsonVersionRuleProvider prov
 {
     var version = Require(options, "version");
     var level = Get(options, "moon", "0");
-    var seed = int.Parse(Require(options, "seed"));
+    var runSeed = int.Parse(Get(options, "run-seed", Require(options, "seed")));
+    var weatherSeed = int.Parse(Get(options, "weather-seed", Math.Max(runSeed - 1, 0).ToString()));
+    var players = int.Parse(Get(options, "players", "0"));
+    var streak = int.Parse(Get(options, "streak-days", "0"));
 
     var pack = provider.Load(version);
-    var report = simulator.Simulate(pack, level, seed);
+    var report = simulator.Simulate(pack, new SimulationRequest
+    {
+        LevelId = level,
+        RunSeed = runSeed,
+        WeatherSeed = weatherSeed,
+        IsChallengeFile = false,
+        ConnectedPlayersOnServer = players,
+        DaysPlayersSurvivedInARow = streak
+    });
     Console.WriteLine(JsonSerializer.Serialize(report, JsonOptions()));
 }
 
@@ -101,7 +112,15 @@ void RunSearch(Dictionary<string, string> options, JsonVersionRuleProvider provi
             var local = new List<SeedReport>();
             for (var seed = range.start; seed <= range.end; seed++)
             {
-                var report = simulator.Simulate(pack, level, seed);
+                var report = simulator.Simulate(pack, new SimulationRequest
+                {
+                    LevelId = level,
+                    RunSeed = seed,
+                    WeatherSeed = Math.Max(seed - 1, 0),
+                    IsChallengeFile = false,
+                    ConnectedPlayersOnServer = 0,
+                    DaysPlayersSurvivedInARow = 0
+                });
                 if (predicate(report))
                 {
                     local.Add(report);
@@ -140,8 +159,24 @@ void RunValidate(Dictionary<string, string> options, JsonVersionRuleProvider pro
     var seed = int.Parse(Get(options, "seed", "123456"));
     var pack = provider.Load(version);
 
-    var first = simulator.Simulate(pack, level, seed);
-    var second = simulator.Simulate(pack, level, seed);
+    var first = simulator.Simulate(pack, new SimulationRequest
+    {
+        LevelId = level,
+        RunSeed = seed,
+        WeatherSeed = Math.Max(seed - 1, 0),
+        IsChallengeFile = false,
+        ConnectedPlayersOnServer = 0,
+        DaysPlayersSurvivedInARow = 0
+    });
+    var second = simulator.Simulate(pack, new SimulationRequest
+    {
+        LevelId = level,
+        RunSeed = seed,
+        WeatherSeed = Math.Max(seed - 1, 0),
+        IsChallengeFile = false,
+        ConnectedPlayersOnServer = 0,
+        DaysPlayersSurvivedInARow = 0
+    });
     var firstJson = JsonSerializer.Serialize(first, JsonOptions());
     var secondJson = JsonSerializer.Serialize(second, JsonOptions());
 
@@ -206,10 +241,20 @@ void RunExportAll(Dictionary<string, string> options, JsonVersionRuleProvider pr
     var headerColumns = new List<string>
     {
         "seed",
+        "run_seed",
+        "weather_seed",
         "weather",
         "scrap_count",
         "total_scrap_value",
-        "goldbar_only"
+        "goldbar_only",
+        "inside_enemy_rolls",
+        "outside_enemy_rolls",
+        "daytime_enemy_rolls",
+        "estimated_outside_hazards",
+        "power_off_at_start",
+        "key_count",
+        "dungeon_seed",
+        "dungeon_flow_id"
     };
     headerColumns.AddRange(allItemIds.Select(id => $"item_{id}_count"));
     if (includeRolls)
@@ -222,14 +267,32 @@ void RunExportAll(Dictionary<string, string> options, JsonVersionRuleProvider pr
     var started = DateTime.UtcNow;
     for (var seed = seedStart; seed <= seedEnd; seed++)
     {
-        var report = simulator.Simulate(pack, levelId, seed);
+        var report = simulator.Simulate(pack, new SimulationRequest
+        {
+            LevelId = levelId,
+            RunSeed = seed,
+            WeatherSeed = Math.Max(seed - 1, 0),
+            IsChallengeFile = false,
+            ConnectedPlayersOnServer = 0,
+            DaysPlayersSurvivedInARow = 0
+        });
         var row = new List<string>
         {
             seed.ToString(),
+            report.RunSeed.ToString(),
+            report.WeatherSeed.ToString(),
             CsvEscape(report.Weather),
             report.ScrapCount.ToString(),
             report.TotalScrapValue.ToString(),
-            report.ScrapRolls.All(x => x.ItemId == 152767) ? "1" : "0"
+            report.ScrapRolls.All(x => string.Equals(x.ItemName, "Gold bar", StringComparison.OrdinalIgnoreCase)) ? "1" : "0",
+            report.EnemySpawn.Inside.Count.ToString(),
+            report.EnemySpawn.Outside.Count.ToString(),
+            report.EnemySpawn.Daytime.Count.ToString(),
+            report.HazardProp.EstimatedOutsideHazards.ToString(),
+            report.HazardProp.PowerOffAtStart ? "1" : "0",
+            report.Keys.KeyCount.ToString(),
+            report.Keys.DungeonSeed.ToString(),
+            report.Keys.DungeonFlowId.ToString()
         };
 
         foreach (var itemId in allItemIds)
@@ -383,7 +446,7 @@ static void PrintHelp()
     Console.WriteLine("Lethal Seed Simulator");
     Console.WriteLine("Commands:");
     Console.WriteLine("  extract --version <key> [--source-root <path>] [--rules-root <path>]");
-    Console.WriteLine("  inspect --version <key> --seed <n> [--moon <idOrName>] [--rules-root <path>]");
+    Console.WriteLine("  inspect --version <key> --seed <n> [--run-seed <n>] [--weather-seed <n>] [--players <n>] [--streak-days <n>] [--moon <idOrName>] [--rules-root <path>]");
     Console.WriteLine("  search --version <key> --seed-start <a> --seed-end <b> [--moon <idOrName>] [--query <expr>] [--threads <n>] [--jsonl true] [--rules-root <path>]");
     Console.WriteLine("  validate --version <key> [--moon <idOrName>] [--seed <n>] [--rules-root <path>]");
     Console.WriteLine("  export-all --version <key> [--moon <idOrName>] [--seed-start <n>] [--seed-end <n>] [--output <csv>] [--export-root <path>] [--report-interval <n>] [--include-rolls-json true] [--rules-root <path>]");

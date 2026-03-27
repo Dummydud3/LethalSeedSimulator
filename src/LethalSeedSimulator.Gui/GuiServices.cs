@@ -40,10 +40,18 @@ internal sealed class GuiServices
         File.WriteAllText(outputFile, JsonSerializer.Serialize(pack, new JsonSerializerOptions { WriteIndented = true }));
     }
 
-    public SeedReport Inspect(string version, string levelId, int seed)
+    public SeedReport Inspect(string version, string levelId, int runSeed, int weatherSeed, int players, int streakDays)
     {
         var pack = ruleProvider.Load(version);
-        return simulator.Simulate(pack, levelId, seed);
+        return simulator.Simulate(pack, new SimulationRequest
+        {
+            LevelId = levelId,
+            RunSeed = runSeed,
+            WeatherSeed = weatherSeed,
+            IsChallengeFile = false,
+            ConnectedPlayersOnServer = players,
+            DaysPlayersSurvivedInARow = streakDays
+        });
     }
 
     public IReadOnlyList<SeedReport> Search(string version, string levelId, int seedStart, int seedEnd, string query, int maxDegreeOfParallelism)
@@ -58,7 +66,15 @@ internal sealed class GuiServices
             var local = new List<SeedReport>();
             for (var seed = range.start; seed <= range.end; seed++)
             {
-                var report = simulator.Simulate(pack, levelId, seed);
+                var report = simulator.Simulate(pack, new SimulationRequest
+                {
+                    LevelId = levelId,
+                    RunSeed = seed,
+                    WeatherSeed = Math.Max(seed - 1, 0),
+                    IsChallengeFile = false,
+                    ConnectedPlayersOnServer = 0,
+                    DaysPlayersSurvivedInARow = 0
+                });
                 if (predicate(report))
                 {
                     local.Add(report);
@@ -101,7 +117,24 @@ internal sealed class GuiServices
         using var stream = new FileStream(outputCsv, FileMode.Create, FileAccess.Write, FileShare.Read);
         using var writer = new StreamWriter(stream, Encoding.UTF8);
 
-        var headerColumns = new List<string> { "seed", "weather", "scrap_count", "total_scrap_value", "goldbar_only" };
+        var headerColumns = new List<string>
+        {
+            "seed",
+            "run_seed",
+            "weather_seed",
+            "weather",
+            "scrap_count",
+            "total_scrap_value",
+            "goldbar_only",
+            "inside_enemy_rolls",
+            "outside_enemy_rolls",
+            "daytime_enemy_rolls",
+            "estimated_outside_hazards",
+            "power_off_at_start",
+            "key_count",
+            "dungeon_seed",
+            "dungeon_flow_id"
+        };
         headerColumns.AddRange(allItemIds.Select(id => $"item_{id}_count"));
         if (includeRollsJson)
         {
@@ -113,14 +146,32 @@ internal sealed class GuiServices
         for (var seed = seedStart; seed <= seedEnd; seed++)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            var report = simulator.Simulate(pack, levelId, seed);
+            var report = simulator.Simulate(pack, new SimulationRequest
+            {
+                LevelId = levelId,
+                RunSeed = seed,
+                WeatherSeed = Math.Max(seed - 1, 0),
+                IsChallengeFile = false,
+                ConnectedPlayersOnServer = 0,
+                DaysPlayersSurvivedInARow = 0
+            });
             var row = new List<string>
             {
                 seed.ToString(),
+                report.RunSeed.ToString(),
+                report.WeatherSeed.ToString(),
                 CsvEscape(report.Weather),
                 report.ScrapCount.ToString(),
                 report.TotalScrapValue.ToString(),
-                report.ScrapRolls.All(x => x.ItemId == 152767) ? "1" : "0"
+                report.ScrapRolls.All(x => string.Equals(x.ItemName, "Gold bar", StringComparison.OrdinalIgnoreCase)) ? "1" : "0",
+                report.EnemySpawn.Inside.Count.ToString(),
+                report.EnemySpawn.Outside.Count.ToString(),
+                report.EnemySpawn.Daytime.Count.ToString(),
+                report.HazardProp.EstimatedOutsideHazards.ToString(),
+                report.HazardProp.PowerOffAtStart ? "1" : "0",
+                report.Keys.KeyCount.ToString(),
+                report.Keys.DungeonSeed.ToString(),
+                report.Keys.DungeonFlowId.ToString()
             };
 
             foreach (var itemId in allItemIds)

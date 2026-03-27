@@ -23,7 +23,7 @@ public static class SeedQuery
     {
         if (string.Equals(term, "only-goldbar-day", StringComparison.OrdinalIgnoreCase))
         {
-            return report => report.ScrapRolls.All(x => x.ItemId == 152767);
+            return report => report.ScrapRolls.All(x => string.Equals(x.ItemName, "Gold bar", StringComparison.OrdinalIgnoreCase));
         }
 
         var split = term.Split('=', 2, StringSplitOptions.TrimEntries);

@@ -20,6 +20,7 @@ public partial class Form1 : Form
         services = new GuiServices(rulesRoot);
         txtGlobalInfo.Text = $"Rules: {rulesRoot}";
         SetExportButtonsIdle(true);
+        numInspectWeatherSeed.Value = Math.Max(numInspectSeed.Value - 1, 0);
         TryShowMoonHints();
     }
 
@@ -28,7 +29,9 @@ public partial class Form1 : Form
         try
         {
             var moon = GetSelectedMoon(cmbInspectMoon);
-            var report = await Task.Run(() => services.Inspect(txtInspectVersion.Text.Trim(), moon, (int)numInspectSeed.Value));
+            var runSeed = (int)numInspectSeed.Value;
+            var weatherSeed = (int)numInspectWeatherSeed.Value;
+            var report = await Task.Run(() => services.Inspect(txtInspectVersion.Text.Trim(), moon, runSeed, weatherSeed, 0, 0));
             txtInspectOutput.Text = JsonSerializer.Serialize(report, new JsonSerializerOptions { WriteIndented = true });
         }
         catch (Exception ex)

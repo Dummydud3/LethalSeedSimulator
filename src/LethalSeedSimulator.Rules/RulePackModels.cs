@@ -9,6 +9,8 @@ public sealed class RulePack
     public required RngOffsets Offsets { get; init; }
 
     public required List<LevelRule> Levels { get; init; }
+
+    public GlobalRules GlobalRules { get; init; } = new();
 }
 
 public sealed class RulePackMetadata
@@ -51,11 +53,31 @@ public sealed class LevelRule
 
     public int MaxScrapExclusive { get; init; }
 
+    public int MinTotalScrapValue { get; init; }
+
+    public int MaxTotalScrapValue { get; init; }
+
     public bool IsChallengeFile { get; init; }
 
     public List<ScrapRule> SpawnableScrap { get; init; } = [];
 
     public List<WeatherRule> Weathers { get; init; } = [];
+
+    public bool OverrideWeather { get; init; }
+
+    public string OverrideWeatherType { get; init; } = "None";
+
+    public List<EnemyRule> InsideEnemies { get; init; } = [];
+
+    public List<EnemyRule> OutsideEnemies { get; init; } = [];
+
+    public List<EnemyRule> DaytimeEnemies { get; init; } = [];
+
+    public List<MapObjectRule> SpawnableMapObjects { get; init; } = [];
+
+    public int SpawnableOutsideObjectsCount { get; init; }
+
+    public List<DungeonFlowRule> DungeonFlowTypes { get; init; } = [];
 }
 
 public sealed class ScrapRule
@@ -90,11 +112,23 @@ public sealed class SeedReport
 
     public required string Weather { get; init; }
 
+    public required int RunSeed { get; init; }
+
+    public required int WeatherSeed { get; init; }
+
     public required int ScrapCount { get; init; }
 
     public required int TotalScrapValue { get; init; }
 
     public required List<ScrapRollResult> ScrapRolls { get; init; }
+
+    public required EnemySpawnReport EnemySpawn { get; init; }
+
+    public required HazardPropReport HazardProp { get; init; }
+
+    public required WeatherReport WeatherReport { get; init; }
+
+    public required KeySpawnReport Keys { get; init; }
 
     [JsonIgnore]
     public IReadOnlyDictionary<int, int> ItemCounts =>
@@ -108,4 +142,118 @@ public sealed class ScrapRollResult
     public required string ItemName { get; init; }
 
     public required int Value { get; init; }
+}
+
+public sealed class GlobalRules
+{
+    public float ScrapAmountMultiplier { get; init; } = 1f;
+
+    public float ScrapValueMultiplier { get; init; } = 0.4f;
+
+    public float MapSizeMultiplier { get; init; } = 1f;
+
+    public float HourTimeBetweenEnemySpawnBatches { get; init; } = 2f;
+
+    public int MinEnemiesToSpawn { get; init; }
+
+    public int MinOutsideEnemiesToSpawn { get; init; }
+
+    public float PowerOffAtStartChance { get; init; } = 0.08f;
+}
+
+public sealed class EnemyRule
+{
+    public required string Id { get; init; }
+
+    public required int Rarity { get; init; }
+}
+
+public sealed class MapObjectRule
+{
+    public required string Id { get; init; }
+
+    public int MaxObjectsEstimate { get; init; }
+}
+
+public sealed class DungeonFlowRule
+{
+    public int Id { get; init; }
+
+    public int Rarity { get; init; }
+}
+
+public sealed class SimulationRequest
+{
+    public required string LevelId { get; init; }
+
+    public required int RunSeed { get; init; }
+
+    public int? WeatherSeed { get; init; }
+
+    public bool IsChallengeFile { get; init; }
+
+    public int ConnectedPlayersOnServer { get; init; }
+
+    public int DaysPlayersSurvivedInARow { get; init; }
+}
+
+public sealed class EnemySpawnReport
+{
+    public required List<EnemySpawnRoll> Inside { get; init; }
+
+    public required List<EnemySpawnRoll> Outside { get; init; }
+
+    public required List<EnemySpawnRoll> Daytime { get; init; }
+}
+
+public sealed class EnemySpawnRoll
+{
+    public required string EnemyId { get; init; }
+
+    public required string Category { get; init; }
+}
+
+public sealed class HazardPropReport
+{
+    public bool PowerOffAtStart { get; init; }
+
+    public int EstimatedOutsideHazards { get; init; }
+
+    public List<MapObjectSpawn> MapObjects { get; init; } = [];
+
+    public int SteamValveBurstMin { get; init; }
+
+    public int SteamValveBurstMax { get; init; }
+}
+
+public sealed class MapObjectSpawn
+{
+    public required string ObjectId { get; init; }
+
+    public int Count { get; init; }
+}
+
+public sealed class WeatherReport
+{
+    public required Dictionary<string, string> AssignedWeatherByLevelId { get; init; }
+}
+
+public sealed class KeySpawnReport
+{
+    public int KeyCount { get; init; }
+
+    public int DungeonSeed { get; init; }
+
+    public int DungeonFlowId { get; init; }
+
+    public List<KeySpawnResult> Placements { get; init; } = [];
+}
+
+public sealed class KeySpawnResult
+{
+    public required string PlacementId { get; init; }
+
+    public int KeyItemId { get; init; } = 14;
+
+    public string KeyItemName { get; init; } = "Key";
 }
