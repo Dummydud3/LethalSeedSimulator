@@ -53,6 +53,10 @@ public sealed class LevelRule
 
     public int MaxScrapExclusive { get; init; }
 
+    public float OffsetFromGlobalTime { get; init; }
+
+    public float DaySpeedMultiplier { get; init; } = 1f;
+
     public int MinTotalScrapValue { get; init; }
 
     public int MaxTotalScrapValue { get; init; }
@@ -158,6 +162,10 @@ public sealed class GlobalRules
 
     public float HourTimeBetweenEnemySpawnBatches { get; init; } = 2f;
 
+    public int NumberOfHoursInDay { get; init; } = 7;
+
+    public float LengthOfHours { get; init; } = 100f;
+
     public int MinEnemiesToSpawn { get; init; }
 
     public int MinOutsideEnemiesToSpawn { get; init; }
@@ -237,6 +245,12 @@ public sealed class EnemySpawnRoll
     public required string EnemyName { get; init; }
 
     public required string Category { get; init; }
+
+    public double SpawnHour { get; init; }
+
+    public int SpawnMinute { get; init; }
+
+    public string SpawnTimeOfDay { get; init; } = string.Empty;
 }
 
 public sealed class HazardPropReport

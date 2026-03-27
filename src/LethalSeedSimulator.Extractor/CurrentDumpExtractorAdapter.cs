@@ -16,6 +16,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
     {
         var roundManagerPath = Path.Combine(sourceRootPath, "Assembly-CSharp", "RoundManager.cs");
         var levelTypePath = Path.Combine(sourceRootPath, "Assembly-CSharp", "SelectableLevel.cs");
+        var timeOfDayPath = Path.Combine(sourceRootPath, "Assembly-CSharp", "TimeOfDay.cs");
         var monoBehaviourPath = Path.Combine(sourceRootPath, "Assets", "MonoBehaviour");
         var sampleScenePath = Path.Combine(sourceRootPath, "Assets", "Scenes", "SampleSceneRelay.unity");
 
@@ -29,6 +30,11 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             throw new FileNotFoundException("SelectableLevel.cs not found", levelTypePath);
         }
 
+        if (!File.Exists(timeOfDayPath))
+        {
+            throw new FileNotFoundException("TimeOfDay.cs not found", timeOfDayPath);
+        }
+
         if (!Directory.Exists(monoBehaviourPath))
         {
             throw new DirectoryNotFoundException($"Assets MonoBehaviour folder not found: {monoBehaviourPath}");
@@ -36,6 +42,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
 
         var roundManager = File.ReadAllText(roundManagerPath);
         var levelType = File.ReadAllText(levelTypePath);
+        var timeOfDay = File.ReadAllText(timeOfDayPath);
         var sampleScene = File.Exists(sampleScenePath) ? File.ReadAllText(sampleScenePath) : string.Empty;
 
         var offsets = new RngOffsets
@@ -72,7 +79,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             },
             Offsets = offsets,
             Levels = levels,
-            GlobalRules = ParseGlobalRules(roundManager, sampleScene, placementRules, itemByGuid, dungeonFlowCatalog)
+            GlobalRules = ParseGlobalRules(roundManager, timeOfDay, sampleScene, placementRules, itemByGuid, dungeonFlowCatalog)
         };
     }
 
@@ -172,6 +179,8 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
                 Name = planetName,
                 MinScrap = minScrap,
                 MaxScrapExclusive = maxScrap,
+                OffsetFromGlobalTime = ParseFloat(content, "^\\s*OffsetFromGlobalTime:\\s*(-?\\d+(?:\\.\\d+)?)$", 0f, true) ?? 0f,
+                DaySpeedMultiplier = ParseFloat(content, "^\\s*DaySpeedMultiplier:\\s*(-?\\d+(?:\\.\\d+)?)$", 1f, true) ?? 1f,
                 MinTotalScrapValue = ExtractIntField(content, "minTotalScrapValue"),
                 MaxTotalScrapValue = ExtractIntField(content, "maxTotalScrapValue"),
                 IsChallengeFile = false,
@@ -366,6 +375,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
 
     private static GlobalRules ParseGlobalRules(
         string roundManagerCode,
+        string timeOfDayCode,
         string sampleScene,
         PlacementRules placementRules,
         IReadOnlyDictionary<string, ScrapRule> itemByGuid,
@@ -373,6 +383,8 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
     {
         var sceneSettings = ParseSceneRoundManagerSettings(sampleScene);
         var scrapAmountFromCode = ParseFloat(roundManagerCode, "scrapAmountMultiplier\\s*=\\s*([0-9]+(?:\\.[0-9]+)?)", 1f);
+        var sceneLengthOfHours = ParseFloat(sampleScene, "^\\s*lengthOfHours:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true);
+        var sceneNumberOfHours = ParseInt(sampleScene, "^\\s*numberOfHours:\\s*(-?\\d+)$");
         var apparatusItem = itemByGuid.Values.FirstOrDefault(x =>
             string.Equals(x.ItemName, "Apparatus", StringComparison.OrdinalIgnoreCase));
         return new GlobalRules
@@ -381,6 +393,8 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             ScrapValueMultiplier = sceneSettings.ScrapValueMultiplier ?? 0.4f,
             MapSizeMultiplier = sceneSettings.MapSizeMultiplier ?? 1f,
             HourTimeBetweenEnemySpawnBatches = sceneSettings.HourTimeBetweenEnemySpawnBatches ?? 2f,
+            NumberOfHoursInDay = sceneNumberOfHours ?? sceneSettings.NumberOfHoursInDay ?? (ParseInt(timeOfDayCode, "numberOfHours\\s*=\\s*(\\d+)") ?? 7),
+            LengthOfHours = sceneLengthOfHours ?? sceneSettings.LengthOfHours ?? (ParseFloat(timeOfDayCode, "lengthOfHours\\s*=\\s*([0-9]+(?:\\.[0-9]+)?)", 100f)),
             MinEnemiesToSpawn = sceneSettings.MinEnemiesToSpawn ?? 0,
             MinOutsideEnemiesToSpawn = sceneSettings.MinOutsideEnemiesToSpawn ?? 0,
             PowerOffAtStartChance = 0.08f,
@@ -840,6 +854,8 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             ScrapAmountMultiplier = ParseFloat(block, "^\\s*scrapAmountMultiplier:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
             MapSizeMultiplier = ParseFloat(block, "^\\s*mapSizeMultiplier:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
             HourTimeBetweenEnemySpawnBatches = ParseFloat(block, "^\\s*hourTimeBetweenEnemySpawnBatches:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
+            LengthOfHours = ParseFloat(block, "^\\s*lengthOfHours:\\s*(-?\\d+(?:\\.\\d+)?)$", null, true),
+            NumberOfHoursInDay = ParseInt(block, "^\\s*numberOfHours:\\s*(-?\\d+)$"),
             MinEnemiesToSpawn = ParseInt(block, "^\\s*minEnemiesToSpawn:\\s*(-?\\d+)$"),
             MinOutsideEnemiesToSpawn = ParseInt(block, "^\\s*minOutsideEnemiesToSpawn:\\s*(-?\\d+)$")
         };
@@ -935,6 +951,10 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         public float? MapSizeMultiplier { get; init; }
 
         public float? HourTimeBetweenEnemySpawnBatches { get; init; }
+
+        public float? LengthOfHours { get; init; }
+
+        public int? NumberOfHoursInDay { get; init; }
 
         public int? MinEnemiesToSpawn { get; init; }
 

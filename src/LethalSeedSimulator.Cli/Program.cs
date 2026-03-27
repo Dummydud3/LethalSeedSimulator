@@ -2,6 +2,7 @@ using System.Text.Json;
 using LethalSeedSimulator.Core;
 using LethalSeedSimulator.Extractor;
 using LethalSeedSimulator.Rules;
+using Microsoft.Data.Sqlite;
 
 var registry = new RuleExtractorRegistry([new CurrentDumpExtractorAdapter()]);
 var simulator = new SeedSimulator();
@@ -212,7 +213,7 @@ void RunExportAll(Dictionary<string, string> options, JsonVersionRuleProvider pr
     var output = Get(
         options,
         "output",
-        Path.Combine(ResolveExportRoot(options), $"{version}_{levelId}_{seedStart}_{seedEnd}.csv"));
+        Path.Combine(ResolveExportRoot(options), $"{version}_{levelId}_{seedStart}_{seedEnd}.db"));
 
     var reportInterval = int.Parse(Get(options, "report-interval", "1000000"));
     var includeRolls = Get(options, "include-rolls-json", "false").Equals("true", StringComparison.OrdinalIgnoreCase);
@@ -227,42 +228,117 @@ void RunExportAll(Dictionary<string, string> options, JsonVersionRuleProvider pr
         ?? pack.Levels.FirstOrDefault(x => string.Equals(x.Name, levelId, StringComparison.OrdinalIgnoreCase))
         ?? throw new InvalidOperationException($"Unknown level id '{levelId}'.");
 
-    var allItemIds = level.SpawnableScrap
-        .Select(x => x.ItemId)
-        .Distinct()
-        .OrderBy(x => x)
-        .ToArray();
-
     Directory.CreateDirectory(Path.GetDirectoryName(output) ?? ".");
-
-    using var stream = new FileStream(output, FileMode.Create, FileAccess.Write, FileShare.Read);
-    using var writer = new StreamWriter(stream);
-
-    var headerColumns = new List<string>
+    if (File.Exists(output))
     {
-        "seed",
-        "run_seed",
-        "weather_seed",
-        "weather",
-        "scrap_count",
-        "total_scrap_value",
-        "goldbar_only",
-        "inside_enemy_rolls",
-        "outside_enemy_rolls",
-        "daytime_enemy_rolls",
-        "estimated_outside_hazards",
-        "power_off_at_start",
-        "key_count",
-        "dungeon_seed",
-        "dungeon_flow_id"
-    };
-    headerColumns.AddRange(allItemIds.Select(id => $"item_{id}_count"));
-    if (includeRolls)
+        File.Delete(output);
+    }
+    var connectionString = new SqliteConnectionStringBuilder
     {
-        headerColumns.Add("rolls_json");
+        DataSource = output,
+        Mode = SqliteOpenMode.ReadWriteCreate
+    }.ToString();
+
+    using var connection = new SqliteConnection(connectionString);
+    connection.Open();
+
+    using (var pragma = connection.CreateCommand())
+    {
+        pragma.CommandText = "PRAGMA journal_mode = WAL; PRAGMA synchronous = NORMAL; PRAGMA temp_store = MEMORY;";
+        pragma.ExecuteNonQuery();
     }
 
-    writer.WriteLine(string.Join(",", headerColumns));
+    using (var create = connection.CreateCommand())
+    {
+        create.CommandText = """
+            CREATE TABLE seeds (
+                seed INTEGER PRIMARY KEY,
+                run_seed INTEGER NOT NULL,
+                weather_seed INTEGER NOT NULL,
+                weather TEXT NOT NULL,
+                scrap_count INTEGER NOT NULL,
+                total_scrap_value INTEGER NOT NULL,
+                goldbar_only INTEGER NOT NULL,
+                inside_enemy_rolls INTEGER NOT NULL,
+                outside_enemy_rolls INTEGER NOT NULL,
+                daytime_enemy_rolls INTEGER NOT NULL,
+                first_inside_spawn_time TEXT,
+                first_outside_spawn_time TEXT,
+                first_daytime_spawn_time TEXT,
+                estimated_outside_hazards INTEGER NOT NULL,
+                power_off_at_start INTEGER NOT NULL,
+                key_count INTEGER NOT NULL,
+                dungeon_seed INTEGER NOT NULL,
+                dungeon_flow_id INTEGER NOT NULL,
+                dungeon_flow_name TEXT NOT NULL,
+                dungeon_flow_theme TEXT NOT NULL,
+                apparatus_spawned INTEGER NOT NULL,
+                apparatus_value INTEGER NOT NULL,
+                rolls_json TEXT
+            );
+            CREATE TABLE seed_item_counts (
+                seed INTEGER NOT NULL,
+                item_id INTEGER NOT NULL,
+                item_name TEXT NOT NULL,
+                item_count INTEGER NOT NULL,
+                PRIMARY KEY (seed, item_id)
+            );
+            """;
+        create.ExecuteNonQuery();
+    }
+
+    using var tx = connection.BeginTransaction();
+    using var insertSeed = connection.CreateCommand();
+    insertSeed.Transaction = tx;
+    insertSeed.CommandText = """
+        INSERT INTO seeds (
+            seed, run_seed, weather_seed, weather, scrap_count, total_scrap_value, goldbar_only,
+            inside_enemy_rolls, outside_enemy_rolls, daytime_enemy_rolls,
+            first_inside_spawn_time, first_outside_spawn_time, first_daytime_spawn_time,
+            estimated_outside_hazards, power_off_at_start, key_count, dungeon_seed, dungeon_flow_id,
+            dungeon_flow_name, dungeon_flow_theme, apparatus_spawned, apparatus_value, rolls_json
+        ) VALUES (
+            $seed, $run_seed, $weather_seed, $weather, $scrap_count, $total_scrap_value, $goldbar_only,
+            $inside_enemy_rolls, $outside_enemy_rolls, $daytime_enemy_rolls,
+            $first_inside_spawn_time, $first_outside_spawn_time, $first_daytime_spawn_time,
+            $estimated_outside_hazards, $power_off_at_start, $key_count, $dungeon_seed, $dungeon_flow_id,
+            $dungeon_flow_name, $dungeon_flow_theme, $apparatus_spawned, $apparatus_value, $rolls_json
+        );
+        """;
+    insertSeed.Parameters.Add("$seed", SqliteType.Integer);
+    insertSeed.Parameters.Add("$run_seed", SqliteType.Integer);
+    insertSeed.Parameters.Add("$weather_seed", SqliteType.Integer);
+    insertSeed.Parameters.Add("$weather", SqliteType.Text);
+    insertSeed.Parameters.Add("$scrap_count", SqliteType.Integer);
+    insertSeed.Parameters.Add("$total_scrap_value", SqliteType.Integer);
+    insertSeed.Parameters.Add("$goldbar_only", SqliteType.Integer);
+    insertSeed.Parameters.Add("$inside_enemy_rolls", SqliteType.Integer);
+    insertSeed.Parameters.Add("$outside_enemy_rolls", SqliteType.Integer);
+    insertSeed.Parameters.Add("$daytime_enemy_rolls", SqliteType.Integer);
+    insertSeed.Parameters.Add("$first_inside_spawn_time", SqliteType.Text);
+    insertSeed.Parameters.Add("$first_outside_spawn_time", SqliteType.Text);
+    insertSeed.Parameters.Add("$first_daytime_spawn_time", SqliteType.Text);
+    insertSeed.Parameters.Add("$estimated_outside_hazards", SqliteType.Integer);
+    insertSeed.Parameters.Add("$power_off_at_start", SqliteType.Integer);
+    insertSeed.Parameters.Add("$key_count", SqliteType.Integer);
+    insertSeed.Parameters.Add("$dungeon_seed", SqliteType.Integer);
+    insertSeed.Parameters.Add("$dungeon_flow_id", SqliteType.Integer);
+    insertSeed.Parameters.Add("$dungeon_flow_name", SqliteType.Text);
+    insertSeed.Parameters.Add("$dungeon_flow_theme", SqliteType.Text);
+    insertSeed.Parameters.Add("$apparatus_spawned", SqliteType.Integer);
+    insertSeed.Parameters.Add("$apparatus_value", SqliteType.Integer);
+    insertSeed.Parameters.Add("$rolls_json", SqliteType.Text);
+
+    using var insertItem = connection.CreateCommand();
+    insertItem.Transaction = tx;
+    insertItem.CommandText = """
+        INSERT INTO seed_item_counts (seed, item_id, item_name, item_count)
+        VALUES ($seed, $item_id, $item_name, $item_count);
+        """;
+    insertItem.Parameters.Add("$seed", SqliteType.Integer);
+    insertItem.Parameters.Add("$item_id", SqliteType.Integer);
+    insertItem.Parameters.Add("$item_name", SqliteType.Text);
+    insertItem.Parameters.Add("$item_count", SqliteType.Integer);
 
     var started = DateTime.UtcNow;
     for (var seed = seedStart; seed <= seedEnd; seed++)
@@ -276,40 +352,45 @@ void RunExportAll(Dictionary<string, string> options, JsonVersionRuleProvider pr
             ConnectedPlayersOnServer = 0,
             DaysPlayersSurvivedInARow = 0
         });
-        var row = new List<string>
-        {
-            seed.ToString(),
-            report.RunSeed.ToString(),
-            report.WeatherSeed.ToString(),
-            CsvEscape(report.Weather),
-            report.ScrapCount.ToString(),
-            report.TotalScrapValue.ToString(),
-            report.ScrapRolls.All(x => string.Equals(x.ItemName, "Gold bar", StringComparison.OrdinalIgnoreCase)) ? "1" : "0",
-            report.EnemySpawn.Inside.Count.ToString(),
-            report.EnemySpawn.Outside.Count.ToString(),
-            report.EnemySpawn.Daytime.Count.ToString(),
-            report.HazardProp.EstimatedOutsideHazards.ToString(),
-            report.HazardProp.PowerOffAtStart ? "1" : "0",
-            report.Keys.KeyCount.ToString(),
-            report.Keys.DungeonSeed.ToString(),
-            report.Keys.DungeonFlowId.ToString()
-        };
+        insertSeed.Parameters["$seed"].Value = seed;
+        insertSeed.Parameters["$run_seed"].Value = report.RunSeed;
+        insertSeed.Parameters["$weather_seed"].Value = report.WeatherSeed;
+        insertSeed.Parameters["$weather"].Value = report.Weather;
+        insertSeed.Parameters["$scrap_count"].Value = report.ScrapCount;
+        insertSeed.Parameters["$total_scrap_value"].Value = report.TotalScrapValue;
+        insertSeed.Parameters["$goldbar_only"].Value = report.ScrapRolls.All(x => string.Equals(x.ItemName, "Gold bar", StringComparison.OrdinalIgnoreCase)) ? 1 : 0;
+        insertSeed.Parameters["$inside_enemy_rolls"].Value = report.EnemySpawn.Inside.Count;
+        insertSeed.Parameters["$outside_enemy_rolls"].Value = report.EnemySpawn.Outside.Count;
+        insertSeed.Parameters["$daytime_enemy_rolls"].Value = report.EnemySpawn.Daytime.Count;
+        insertSeed.Parameters["$first_inside_spawn_time"].Value = report.EnemySpawn.Inside.FirstOrDefault()?.SpawnTimeOfDay ?? string.Empty;
+        insertSeed.Parameters["$first_outside_spawn_time"].Value = report.EnemySpawn.Outside.FirstOrDefault()?.SpawnTimeOfDay ?? string.Empty;
+        insertSeed.Parameters["$first_daytime_spawn_time"].Value = report.EnemySpawn.Daytime.FirstOrDefault()?.SpawnTimeOfDay ?? string.Empty;
+        insertSeed.Parameters["$estimated_outside_hazards"].Value = report.HazardProp.EstimatedOutsideHazards;
+        insertSeed.Parameters["$power_off_at_start"].Value = report.HazardProp.PowerOffAtStart ? 1 : 0;
+        insertSeed.Parameters["$key_count"].Value = report.Keys.KeyCount;
+        insertSeed.Parameters["$dungeon_seed"].Value = report.Keys.DungeonSeed;
+        insertSeed.Parameters["$dungeon_flow_id"].Value = report.Keys.DungeonFlowId;
+        insertSeed.Parameters["$dungeon_flow_name"].Value = report.Keys.DungeonFlowName;
+        insertSeed.Parameters["$dungeon_flow_theme"].Value = report.Keys.DungeonFlowTheme;
+        insertSeed.Parameters["$apparatus_spawned"].Value = report.Apparatus.SpawnedFromSyncedProps ? 1 : 0;
+        insertSeed.Parameters["$apparatus_value"].Value = report.Apparatus.Value;
+        insertSeed.Parameters["$rolls_json"].Value = includeRolls ? JsonSerializer.Serialize(report.ScrapRolls) : string.Empty;
+        insertSeed.ExecuteNonQuery();
 
-        foreach (var itemId in allItemIds)
+        var groupedItems = report.ScrapRolls
+            .GroupBy(x => new { x.ItemId, x.ItemName })
+            .Select(x => new { x.Key.ItemId, x.Key.ItemName, Count = x.Count() });
+        foreach (var item in groupedItems)
         {
-            row.Add(report.ItemCounts.TryGetValue(itemId, out var count) ? count.ToString() : "0");
+            insertItem.Parameters["$seed"].Value = seed;
+            insertItem.Parameters["$item_id"].Value = item.ItemId;
+            insertItem.Parameters["$item_name"].Value = item.ItemName;
+            insertItem.Parameters["$item_count"].Value = item.Count;
+            insertItem.ExecuteNonQuery();
         }
-
-        if (includeRolls)
-        {
-            row.Add(CsvEscape(JsonSerializer.Serialize(report.ScrapRolls)));
-        }
-
-        writer.WriteLine(string.Join(",", row));
 
         if ((seed - seedStart + 1) % reportInterval == 0)
         {
-            writer.Flush();
             var done = seed - seedStart + 1;
             var elapsed = DateTime.UtcNow - started;
             var perSecond = done / Math.Max(elapsed.TotalSeconds, 0.001);
@@ -319,8 +400,25 @@ void RunExportAll(Dictionary<string, string> options, JsonVersionRuleProvider pr
         }
     }
 
-    writer.Flush();
-    Console.WriteLine($"Export complete: {output}");
+    tx.Commit();
+    using (var index = connection.CreateCommand())
+    {
+        index.CommandText = """
+            CREATE INDEX idx_seeds_total_scrap_value ON seeds(total_scrap_value DESC);
+            CREATE INDEX idx_seeds_scrap_count ON seeds(scrap_count DESC);
+            CREATE INDEX idx_seeds_weather ON seeds(weather);
+            CREATE INDEX idx_seeds_key_count ON seeds(key_count DESC);
+            CREATE INDEX idx_seeds_dungeon_flow ON seeds(dungeon_flow_theme, dungeon_flow_id);
+            CREATE INDEX idx_seed_item_counts_item ON seed_item_counts(item_id, item_count DESC);
+            """;
+        index.ExecuteNonQuery();
+    }
+
+    Console.WriteLine($"SQLite export complete: {output}");
+    Console.WriteLine("Example queries:");
+    Console.WriteLine("  SELECT seed, total_scrap_value FROM seeds ORDER BY total_scrap_value DESC LIMIT 50;");
+    Console.WriteLine("  SELECT seed, weather, key_count FROM seeds WHERE dungeon_flow_theme='Factory' ORDER BY seed LIMIT 100;");
+    Console.WriteLine("  SELECT seed, item_count FROM seed_item_counts WHERE item_name='Gold bar' ORDER BY item_count DESC, seed LIMIT 100;");
 }
 
 static Dictionary<string, string> ParseOptions(string[] args)
@@ -449,16 +547,7 @@ static void PrintHelp()
     Console.WriteLine("  inspect --version <key> --seed <n> [--run-seed <n>] [--weather-seed <n>] [--players <n>] [--streak-days <n>] [--moon <idOrName>] [--rules-root <path>]");
     Console.WriteLine("  search --version <key> --seed-start <a> --seed-end <b> [--moon <idOrName>] [--query <expr>] [--threads <n>] [--jsonl true] [--rules-root <path>]");
     Console.WriteLine("  validate --version <key> [--moon <idOrName>] [--seed <n>] [--rules-root <path>]");
-    Console.WriteLine("  export-all --version <key> [--moon <idOrName>] [--seed-start <n>] [--seed-end <n>] [--output <csv>] [--export-root <path>] [--report-interval <n>] [--include-rolls-json true] [--rules-root <path>]");
+    Console.WriteLine("  export-all --version <key> [--moon <idOrName>] [--seed-start <n>] [--seed-end <n>] [--output <db>] [--export-root <path>] [--report-interval <n>] [--include-rolls-json true] [--rules-root <path>]");
     Console.WriteLine("  versions");
 }
 
-static string CsvEscape(string value)
-{
-    if (!value.Contains(',') && !value.Contains('"') && !value.Contains('\n') && !value.Contains('\r'))
-    {
-        return value;
-    }
-
-    return $"\"{value.Replace("\"", "\"\"", StringComparison.Ordinal)}\"";
-}
