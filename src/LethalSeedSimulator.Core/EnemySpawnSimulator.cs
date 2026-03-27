@@ -32,7 +32,7 @@ public sealed class EnemySpawnSimulator
             var idx = WeightedPicker.GetRandomWeightedIndex(weights, random);
             output.Add(new EnemySpawnRoll
             {
-                EnemyId = pool[idx].Id,
+                EnemyName = pool[idx].Name,
                 Category = category
             });
         }

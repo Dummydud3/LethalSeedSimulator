@@ -3,7 +3,7 @@
     "RuleSetVersion": "decompiled-current",
     "GameVersionLabel": "decompiled-dump",
     "SourceSignature": "DC2ECC9BBDA7707FCFABD7A8DBA8BE61CBC26108F8F684EEEC95B80345C695CC",
-    "ExtractedAtUtc": "2026-03-27T13:09:58.8303362+00:00"
+    "ExtractedAtUtc": "2026-03-27T13:54:24.3166121+00:00"
   },
   "Offsets": {
     "LevelRandom": 0,
@@ -31,7 +31,10 @@
           "Rarity": 80,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -39,7 +42,10 @@
           "Rarity": 90,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -47,7 +53,8 @@
           "Rarity": 12,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 701558109,
@@ -55,7 +62,10 @@
           "Rarity": 88,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1,
@@ -63,7 +73,8 @@
           "Rarity": 4,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 303772523,
@@ -71,7 +82,8 @@
           "Rarity": 80,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -79,7 +91,11 @@
           "Rarity": 19,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1974712455,
@@ -87,7 +103,8 @@
           "Rarity": 3,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105377271,
@@ -95,7 +112,8 @@
           "Rarity": 32,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 637089745,
@@ -103,7 +121,8 @@
           "Rarity": 5,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 720102474,
@@ -111,7 +130,8 @@
           "Rarity": 10,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1237810556,
@@ -119,7 +139,8 @@
           "Rarity": 10,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 633198166,
@@ -127,7 +148,8 @@
           "Rarity": 32,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1256791633,
@@ -135,7 +157,8 @@
           "Rarity": 3,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -143,7 +166,8 @@
           "Rarity": 3,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 531283125,
@@ -151,7 +175,11 @@
           "Rarity": 3,
           "MinValueInclusive": 200,
           "MaxValueExclusive": 400,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1103580240,
@@ -159,7 +187,8 @@
           "Rarity": 2,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1313416225,
@@ -167,7 +196,8 @@
           "Rarity": 1,
           "MinValueInclusive": 255,
           "MaxValueExclusive": 525,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1774772929,
@@ -175,7 +205,10 @@
           "Rarity": 6,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 155403741,
@@ -183,7 +216,8 @@
           "Rarity": 22,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -191,7 +225,11 @@
           "Rarity": 17,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1918699375,
@@ -199,7 +237,8 @@
           "Rarity": 42,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1257211724,
@@ -207,7 +246,8 @@
           "Rarity": 5,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -237,80 +277,98 @@
       "InsideEnemies": [
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 51
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 58
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 28
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 13
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 16
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 31
         },
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 1
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 28
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 1
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 75
         },
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 1
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 56
         },
         {
           "Id": "acfca4ca4b68fe24e9b804eb28daf981",
+          "Name": "RadMech",
           "Rarity": 3
         }
       ],
       "DaytimeEnemies": [
         {
           "Id": "0d134461f9c101e448989582e2e14b31",
+          "Name": "Red Locust Bees",
           "Rarity": 22
         },
         {
           "Id": "8446abb50bf8bcd4bb9343b71fda2336",
+          "Name": "Manticoil",
           "Rarity": 74
         },
         {
           "Id": "f931ce54a6611d64d961ac8be97b29d0",
+          "Name": "Docile Locust Bees",
           "Rarity": 52
         }
       ],
       "SpawnableMapObjects": [
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 12
         },
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 12
         }
       ],
@@ -345,7 +403,10 @@
           "Rarity": 30,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -353,7 +414,10 @@
           "Rarity": 40,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -361,7 +425,8 @@
           "Rarity": 10,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 701558109,
@@ -369,7 +434,10 @@
           "Rarity": 23,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 303772523,
@@ -377,7 +445,8 @@
           "Rarity": 59,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 981360405,
@@ -385,7 +454,8 @@
           "Rarity": 31,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -393,7 +463,8 @@
           "Rarity": 8,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -401,7 +472,11 @@
           "Rarity": 58,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 646764934,
@@ -409,7 +484,8 @@
           "Rarity": 13,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 637089745,
@@ -417,7 +493,8 @@
           "Rarity": 49,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -425,7 +502,8 @@
           "Rarity": 6,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 748084043,
@@ -433,7 +511,10 @@
           "Rarity": 17,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1393385808,
@@ -441,7 +522,10 @@
           "Rarity": 34,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 10347079,
@@ -449,7 +533,11 @@
           "Rarity": 32,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1237810556,
@@ -457,7 +545,8 @@
           "Rarity": 20,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1495750731,
@@ -465,7 +554,8 @@
           "Rarity": 12,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 170,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -473,7 +563,8 @@
           "Rarity": 12,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105377271,
@@ -481,7 +572,8 @@
           "Rarity": 19,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -489,7 +581,8 @@
           "Rarity": 7,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1946320473,
@@ -497,7 +590,8 @@
           "Rarity": 4,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 720102474,
@@ -505,7 +599,8 @@
           "Rarity": 34,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 960770791,
@@ -513,7 +608,8 @@
           "Rarity": 26,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -521,7 +617,11 @@
           "Rarity": 53,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 11311458,
@@ -529,7 +629,8 @@
           "Rarity": 16,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -537,7 +638,8 @@
           "Rarity": 10,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1256791633,
@@ -545,7 +647,8 @@
           "Rarity": 10,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 531283125,
@@ -553,7 +656,11 @@
           "Rarity": 3,
           "MinValueInclusive": 200,
           "MaxValueExclusive": 400,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1774772929,
@@ -561,7 +668,10 @@
           "Rarity": 17,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 155403741,
@@ -569,7 +679,8 @@
           "Rarity": 14,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -577,7 +688,11 @@
           "Rarity": 13,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1918699375,
@@ -585,7 +700,8 @@
           "Rarity": 12,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1979021990,
@@ -593,7 +709,8 @@
           "Rarity": 11,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 282248098,
@@ -601,7 +718,8 @@
           "Rarity": 5,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 930571994,
@@ -609,7 +727,8 @@
           "Rarity": 3,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1257211724,
@@ -617,7 +736,8 @@
           "Rarity": 32,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1592453605,
@@ -625,7 +745,10 @@
           "Rarity": 19,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 986753552,
@@ -633,7 +756,11 @@
           "Rarity": 15,
           "MinValueInclusive": 85,
           "MaxValueExclusive": 160,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 2053029093,
@@ -641,7 +768,10 @@
           "Rarity": 19,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1057561792,
@@ -649,7 +779,8 @@
           "Rarity": 31,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 110,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1750501098,
@@ -657,7 +788,8 @@
           "Rarity": 23,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 180,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105217076,
@@ -665,7 +797,8 @@
           "Rarity": 1,
           "MinValueInclusive": 1,
           "MaxValueExclusive": 500,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -695,100 +828,123 @@
       "InsideEnemies": [
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 93
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 69
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 78
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 14
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 24
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 28
         },
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 1
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 14
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 1
         },
         {
           "Id": "6d60297fb56fde7459318dc952b8898f",
+          "Name": "Clay Surgeon",
           "Rarity": 3
         },
         {
           "Id": "9834f7aade31baf4198fd2af4dd52da8",
+          "Name": "Maneater",
           "Rarity": 34
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 78
         },
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 1
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 95
         },
         {
           "Id": "7b7bc3822ba240b4e8483370e00c83e8",
+          "Name": "Baboon hawk",
           "Rarity": 20
         }
       ],
       "DaytimeEnemies": [
         {
           "Id": "8446abb50bf8bcd4bb9343b71fda2336",
+          "Name": "Manticoil",
           "Rarity": 100
         },
         {
           "Id": "f931ce54a6611d64d961ac8be97b29d0",
+          "Name": "Docile Locust Bees",
           "Rarity": 46
         },
         {
           "Id": "0d134461f9c101e448989582e2e14b31",
+          "Name": "Red Locust Bees",
           "Rarity": 43
         },
         {
           "Id": "2ae101b95f3199641a937978ac5e8255",
+          "Name": "Tulip Snake",
           "Rarity": 3
         },
         {
           "Id": "7114749400e3bd64ca059772cd7689c4",
+          "Name": "GiantKiwi",
           "Rarity": 7
         }
       ],
       "SpawnableMapObjects": [
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 11
         },
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 11
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 11
         }
       ],
@@ -823,7 +979,10 @@
           "Rarity": 25,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -831,7 +990,10 @@
           "Rarity": 25,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -839,7 +1001,8 @@
           "Rarity": 30,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 701558109,
@@ -847,7 +1010,10 @@
           "Rarity": 16,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 303772523,
@@ -855,7 +1021,8 @@
           "Rarity": 31,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 981360405,
@@ -863,7 +1030,8 @@
           "Rarity": 17,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -871,7 +1039,8 @@
           "Rarity": 8,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -879,7 +1048,11 @@
           "Rarity": 30,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 646764934,
@@ -887,7 +1060,8 @@
           "Rarity": 19,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 637089745,
@@ -895,7 +1069,8 @@
           "Rarity": 49,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -903,7 +1078,8 @@
           "Rarity": 6,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 748084043,
@@ -911,7 +1087,10 @@
           "Rarity": 21,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1393385808,
@@ -919,7 +1098,10 @@
           "Rarity": 40,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 10347079,
@@ -927,7 +1109,11 @@
           "Rarity": 40,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1237810556,
@@ -935,7 +1121,8 @@
           "Rarity": 27,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1495750731,
@@ -943,7 +1130,8 @@
           "Rarity": 18,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 170,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -951,7 +1139,8 @@
           "Rarity": 12,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105377271,
@@ -959,7 +1148,8 @@
           "Rarity": 17,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -967,7 +1157,8 @@
           "Rarity": 7,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 2044362862,
@@ -975,7 +1166,8 @@
           "Rarity": 24,
           "MinValueInclusive": 5,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 720102474,
@@ -983,7 +1175,8 @@
           "Rarity": 56,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 960770791,
@@ -991,7 +1184,8 @@
           "Rarity": 46,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -999,7 +1193,11 @@
           "Rarity": 24,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 11311458,
@@ -1007,7 +1205,8 @@
           "Rarity": 33,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 868974745,
@@ -1015,7 +1214,11 @@
           "Rarity": 46,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 210,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1256791633,
@@ -1023,7 +1226,8 @@
           "Rarity": 10,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -1031,7 +1235,8 @@
           "Rarity": 35,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 531283125,
@@ -1039,7 +1244,11 @@
           "Rarity": 5,
           "MinValueInclusive": 200,
           "MaxValueExclusive": 400,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1774772929,
@@ -1047,7 +1256,10 @@
           "Rarity": 16,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 155403741,
@@ -1055,7 +1267,8 @@
           "Rarity": 14,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -1063,7 +1276,11 @@
           "Rarity": 12,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1918699375,
@@ -1071,7 +1288,8 @@
           "Rarity": 30,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1979021990,
@@ -1079,7 +1297,8 @@
           "Rarity": 38,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1257211724,
@@ -1087,7 +1306,8 @@
           "Rarity": 28,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1592453605,
@@ -1095,7 +1315,10 @@
           "Rarity": 34,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1057561792,
@@ -1103,7 +1326,8 @@
           "Rarity": 27,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 110,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 986753552,
@@ -1111,7 +1335,11 @@
           "Rarity": 12,
           "MinValueInclusive": 85,
           "MaxValueExclusive": 160,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 2053029093,
@@ -1119,7 +1347,10 @@
           "Rarity": 22,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1750501098,
@@ -1127,7 +1358,8 @@
           "Rarity": 22,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 180,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105217076,
@@ -1135,7 +1367,8 @@
           "Rarity": 1,
           "MinValueInclusive": 1,
           "MaxValueExclusive": 500,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -1161,92 +1394,113 @@
       "InsideEnemies": [
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 48
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 40
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 63
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 80
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 9
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 28
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 6
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 19
         },
         {
           "Id": "6d60297fb56fde7459318dc952b8898f",
+          "Name": "Clay Surgeon",
           "Rarity": 14
         },
         {
           "Id": "9834f7aade31baf4198fd2af4dd52da8",
+          "Name": "Maneater",
           "Rarity": 53
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 100
         },
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 4
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 18
         },
         {
           "Id": "7b7bc3822ba240b4e8483370e00c83e8",
+          "Name": "Baboon hawk",
           "Rarity": 31
         }
       ],
       "DaytimeEnemies": [
         {
           "Id": "8446abb50bf8bcd4bb9343b71fda2336",
+          "Name": "Manticoil",
           "Rarity": 100
         },
         {
           "Id": "0d134461f9c101e448989582e2e14b31",
+          "Name": "Red Locust Bees",
           "Rarity": 36
         },
         {
           "Id": "f931ce54a6611d64d961ac8be97b29d0",
+          "Name": "Docile Locust Bees",
           "Rarity": 40
         },
         {
           "Id": "2ae101b95f3199641a937978ac5e8255",
+          "Name": "Tulip Snake",
           "Rarity": 4
         },
         {
           "Id": "7114749400e3bd64ca059772cd7689c4",
+          "Name": "GiantKiwi",
           "Rarity": 79
         }
       ],
       "SpawnableMapObjects": [
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 20
         },
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 20
         }
       ],
@@ -1281,7 +1535,10 @@
           "Rarity": 77,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -1289,7 +1546,10 @@
           "Rarity": 72,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -1297,7 +1557,8 @@
           "Rarity": 28,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 701558109,
@@ -1305,7 +1566,10 @@
           "Rarity": 83,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 303772523,
@@ -1313,7 +1577,8 @@
           "Rarity": 89,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 981360405,
@@ -1321,7 +1586,8 @@
           "Rarity": 18,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -1329,7 +1595,8 @@
           "Rarity": 3,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -1337,7 +1604,11 @@
           "Rarity": 67,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 646764934,
@@ -1345,7 +1616,8 @@
           "Rarity": 16,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 637089745,
@@ -1353,7 +1625,8 @@
           "Rarity": 24,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -1361,7 +1634,8 @@
           "Rarity": 2,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 748084043,
@@ -1369,7 +1643,10 @@
           "Rarity": 4,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1393385808,
@@ -1377,7 +1654,10 @@
           "Rarity": 29,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 10347079,
@@ -1385,7 +1665,11 @@
           "Rarity": 24,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1313416225,
@@ -1393,7 +1677,8 @@
           "Rarity": 4,
           "MinValueInclusive": 255,
           "MaxValueExclusive": 525,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 531283125,
@@ -1401,7 +1686,11 @@
           "Rarity": 3,
           "MinValueInclusive": 200,
           "MaxValueExclusive": 400,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 225846342,
@@ -1409,7 +1698,8 @@
           "Rarity": 43,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1256791633,
@@ -1417,7 +1707,8 @@
           "Rarity": 34,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1103580240,
@@ -1425,7 +1716,8 @@
           "Rarity": 3,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -1433,7 +1725,8 @@
           "Rarity": 2,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1774772929,
@@ -1441,7 +1734,10 @@
           "Rarity": 8,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 152767,
@@ -1449,7 +1745,11 @@
           "Rarity": 24,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1918699375,
@@ -1457,7 +1757,8 @@
           "Rarity": 42,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1257211724,
@@ -1465,7 +1766,8 @@
           "Rarity": 65,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1057561792,
@@ -1473,7 +1775,8 @@
           "Rarity": 20,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 110,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 986753552,
@@ -1481,7 +1784,11 @@
           "Rarity": 11,
           "MinValueInclusive": 85,
           "MaxValueExclusive": 160,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 2053029093,
@@ -1489,7 +1796,10 @@
           "Rarity": 27,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1592453605,
@@ -1497,7 +1807,10 @@
           "Rarity": 32,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1750501098,
@@ -1505,7 +1818,8 @@
           "Rarity": 21,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 180,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105217076,
@@ -1513,7 +1827,8 @@
           "Rarity": 1,
           "MinValueInclusive": 1,
           "MaxValueExclusive": 500,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -1539,96 +1854,118 @@
       "InsideEnemies": [
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 38
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 64
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 36
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 56
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 74
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 15
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 10
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 9
         },
         {
           "Id": "84c44cc8b951f9f4185b25499f13ec3b",
+          "Name": "Jester",
           "Rarity": 1
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 3
         },
         {
           "Id": "9834f7aade31baf4198fd2af4dd52da8",
+          "Name": "Maneater",
           "Rarity": 9
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 64
         },
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 38
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 16
         },
         {
           "Id": "7b7bc3822ba240b4e8483370e00c83e8",
+          "Name": "Baboon hawk",
           "Rarity": 85
         }
       ],
       "DaytimeEnemies": [
         {
           "Id": "8446abb50bf8bcd4bb9343b71fda2336",
+          "Name": "Manticoil",
           "Rarity": 83
         },
         {
           "Id": "f931ce54a6611d64d961ac8be97b29d0",
+          "Name": "Docile Locust Bees",
           "Rarity": 39
         },
         {
           "Id": "0d134461f9c101e448989582e2e14b31",
+          "Name": "Red Locust Bees",
           "Rarity": 70
         },
         {
           "Id": "2ae101b95f3199641a937978ac5e8255",
+          "Name": "Tulip Snake",
           "Rarity": 4
         }
       ],
       "SpawnableMapObjects": [
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 15
         },
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 15
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 15
         }
       ],
@@ -1655,7 +1992,10 @@
           "Rarity": 30,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -1663,7 +2003,10 @@
           "Rarity": 40,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -1671,7 +2014,8 @@
           "Rarity": 32,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 701558109,
@@ -1679,7 +2023,10 @@
           "Rarity": 16,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 303772523,
@@ -1687,7 +2034,8 @@
           "Rarity": 31,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 981360405,
@@ -1695,7 +2043,8 @@
           "Rarity": 17,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -1703,7 +2052,8 @@
           "Rarity": 8,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -1711,7 +2061,11 @@
           "Rarity": 44,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 646764934,
@@ -1719,7 +2073,8 @@
           "Rarity": 24,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 637089745,
@@ -1727,7 +2082,8 @@
           "Rarity": 40,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -1735,7 +2091,8 @@
           "Rarity": 9,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 748084043,
@@ -1743,7 +2100,10 @@
           "Rarity": 21,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1393385808,
@@ -1751,7 +2111,10 @@
           "Rarity": 40,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 10347079,
@@ -1759,7 +2122,11 @@
           "Rarity": 32,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1237810556,
@@ -1767,7 +2134,8 @@
           "Rarity": 20,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1495750731,
@@ -1775,7 +2143,8 @@
           "Rarity": 12,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 170,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -1783,7 +2152,8 @@
           "Rarity": 12,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105377271,
@@ -1791,7 +2161,8 @@
           "Rarity": 12,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -1799,7 +2170,8 @@
           "Rarity": 4,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 2044362862,
@@ -1807,7 +2179,8 @@
           "Rarity": 25,
           "MinValueInclusive": 5,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 720102474,
@@ -1815,7 +2188,8 @@
           "Rarity": 50,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 960770791,
@@ -1823,7 +2197,8 @@
           "Rarity": 46,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -1831,7 +2206,11 @@
           "Rarity": 24,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 11311458,
@@ -1839,7 +2218,8 @@
           "Rarity": 37,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 868974745,
@@ -1847,7 +2227,11 @@
           "Rarity": 41,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 210,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1256791633,
@@ -1855,7 +2239,8 @@
           "Rarity": 13,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -1863,7 +2248,8 @@
           "Rarity": 9,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 531283125,
@@ -1871,7 +2257,11 @@
           "Rarity": 7,
           "MinValueInclusive": 200,
           "MaxValueExclusive": 400,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1774772929,
@@ -1879,7 +2269,10 @@
           "Rarity": 16,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 155403741,
@@ -1887,7 +2280,8 @@
           "Rarity": 21,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -1895,7 +2289,11 @@
           "Rarity": 23,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1918699375,
@@ -1903,7 +2301,8 @@
           "Rarity": 30,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1979021990,
@@ -1911,7 +2310,8 @@
           "Rarity": 20,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1257211724,
@@ -1919,7 +2319,8 @@
           "Rarity": 50,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1592453605,
@@ -1927,7 +2328,10 @@
           "Rarity": 40,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 2053029093,
@@ -1935,7 +2339,10 @@
           "Rarity": 16,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1057561792,
@@ -1943,7 +2350,8 @@
           "Rarity": 19,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 110,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 986753552,
@@ -1951,7 +2359,11 @@
           "Rarity": 16,
           "MinValueInclusive": 85,
           "MaxValueExclusive": 160,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         }
       ],
       "Weathers": [
@@ -1981,124 +2393,153 @@
       "InsideEnemies": [
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 2
         },
         {
           "Id": "e6e31c21db2120d4cbe2406076d931ec",
+          "Name": "Lasso",
           "Rarity": 0
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 62
         },
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 42
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 17
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 40
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 10
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 67
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 57
         },
         {
           "Id": "84c44cc8b951f9f4185b25499f13ec3b",
+          "Name": "Jester",
           "Rarity": 7
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 33
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 8
         },
         {
           "Id": "25b98fa276ac7484dbc090463d455364",
+          "Name": "Masked",
           "Rarity": 5
         },
         {
           "Id": "7ca593ef539f8d64db3f1855bf45a2fb",
+          "Name": "Butler",
           "Rarity": 10
         },
         {
           "Id": "6d60297fb56fde7459318dc952b8898f",
+          "Name": "Clay Surgeon",
           "Rarity": 3
         },
         {
           "Id": "9834f7aade31baf4198fd2af4dd52da8",
+          "Name": "Maneater",
           "Rarity": 43
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 16
         },
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 19
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 6
         },
         {
           "Id": "acfca4ca4b68fe24e9b804eb28daf981",
+          "Name": "RadMech",
           "Rarity": 2
         },
         {
           "Id": "7b7bc3822ba240b4e8483370e00c83e8",
+          "Name": "Baboon hawk",
           "Rarity": 52
         }
       ],
       "DaytimeEnemies": [
         {
           "Id": "8446abb50bf8bcd4bb9343b71fda2336",
+          "Name": "Manticoil",
           "Rarity": 63
         },
         {
           "Id": "f931ce54a6611d64d961ac8be97b29d0",
+          "Name": "Docile Locust Bees",
           "Rarity": 30
         },
         {
           "Id": "0d134461f9c101e448989582e2e14b31",
+          "Name": "Red Locust Bees",
           "Rarity": 17
         },
         {
           "Id": "2ae101b95f3199641a937978ac5e8255",
+          "Name": "Tulip Snake",
           "Rarity": 9
         },
         {
           "Id": "7114749400e3bd64ca059772cd7689c4",
+          "Name": "GiantKiwi",
           "Rarity": 5
         }
       ],
       "SpawnableMapObjects": [
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 35
         }
       ],
@@ -2133,7 +2574,10 @@
           "Rarity": 2,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -2141,7 +2585,10 @@
           "Rarity": 2,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -2149,7 +2596,8 @@
           "Rarity": 16,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 303772523,
@@ -2157,7 +2605,8 @@
           "Rarity": 4,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1673206933,
@@ -2165,7 +2614,10 @@
           "Rarity": 49,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 320,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 981360405,
@@ -2173,7 +2625,8 @@
           "Rarity": 33,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1237810556,
@@ -2181,7 +2634,8 @@
           "Rarity": 4,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -2189,7 +2643,8 @@
           "Rarity": 5,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1768180206,
@@ -2197,7 +2652,11 @@
           "Rarity": 24,
           "MinValueInclusive": 100,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "c6416aab49309b640b623658f8945439"
+          ]
         },
         {
           "ItemId": 942725122,
@@ -2205,7 +2664,10 @@
           "Rarity": 56,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 310,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 11311458,
@@ -2213,7 +2675,8 @@
           "Rarity": 48,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1974712455,
@@ -2221,7 +2684,8 @@
           "Rarity": 19,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -2229,7 +2693,8 @@
           "Rarity": 46,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1092750697,
@@ -2237,7 +2702,10 @@
           "Rarity": 24,
           "MinValueInclusive": 35,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 960770791,
@@ -2245,7 +2713,8 @@
           "Rarity": 25,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 725027776,
@@ -2253,7 +2722,8 @@
           "Rarity": 4,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1371745396,
@@ -2261,7 +2731,8 @@
           "Rarity": 28,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 260,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1495750731,
@@ -2269,7 +2740,8 @@
           "Rarity": 44,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 170,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -2277,7 +2749,11 @@
           "Rarity": 46,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 748084043,
@@ -2285,7 +2761,10 @@
           "Rarity": 35,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1946320473,
@@ -2293,7 +2772,8 @@
           "Rarity": 43,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -2301,7 +2781,8 @@
           "Rarity": 17,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -2309,7 +2790,8 @@
           "Rarity": 26,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1046283282,
@@ -2317,7 +2799,8 @@
           "Rarity": 31,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1680385413,
@@ -2325,7 +2808,8 @@
           "Rarity": 23,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 2044362862,
@@ -2333,7 +2817,8 @@
           "Rarity": 16,
           "MinValueInclusive": 5,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 10347079,
@@ -2341,7 +2826,11 @@
           "Rarity": 25,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 531283125,
@@ -2349,7 +2838,11 @@
           "Rarity": 16,
           "MinValueInclusive": 200,
           "MaxValueExclusive": 400,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1256791633,
@@ -2357,7 +2850,8 @@
           "Rarity": 8,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -2365,7 +2859,8 @@
           "Rarity": 8,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1103580240,
@@ -2373,7 +2868,8 @@
           "Rarity": 14,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -2381,7 +2877,11 @@
           "Rarity": 19,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 282248098,
@@ -2389,7 +2889,8 @@
           "Rarity": 53,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 930571994,
@@ -2397,7 +2898,8 @@
           "Rarity": 25,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1257211724,
@@ -2405,7 +2907,8 @@
           "Rarity": 57,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 986753552,
@@ -2413,7 +2916,11 @@
           "Rarity": 33,
           "MinValueInclusive": 85,
           "MaxValueExclusive": 160,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1057561792,
@@ -2421,7 +2928,8 @@
           "Rarity": 7,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 110,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1592453605,
@@ -2429,7 +2937,10 @@
           "Rarity": 13,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 2053029093,
@@ -2437,7 +2948,10 @@
           "Rarity": 29,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1750501098,
@@ -2445,7 +2959,8 @@
           "Rarity": 28,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 180,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 346690810,
@@ -2453,7 +2968,8 @@
           "Rarity": 35,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1575557190,
@@ -2461,7 +2977,8 @@
           "Rarity": 35,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105217076,
@@ -2469,7 +2986,8 @@
           "Rarity": 2,
           "MinValueInclusive": 1,
           "MaxValueExclusive": 500,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -2487,64 +3005,79 @@
       "InsideEnemies": [
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 20
         },
         {
           "Id": "e6e31c21db2120d4cbe2406076d931ec",
+          "Name": "Lasso",
           "Rarity": 0
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 43
         },
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 31
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 6
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 51
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 43
         },
         {
           "Id": "84c44cc8b951f9f4185b25499f13ec3b",
+          "Name": "Jester",
           "Rarity": 60
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 7
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 100
         },
         {
           "Id": "25b98fa276ac7484dbc090463d455364",
+          "Name": "Masked",
           "Rarity": 25
         },
         {
           "Id": "7ca593ef539f8d64db3f1855bf45a2fb",
+          "Name": "Butler",
           "Rarity": 18
         },
         {
           "Id": "6d60297fb56fde7459318dc952b8898f",
+          "Name": "Clay Surgeon",
           "Rarity": 11
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 60
         },
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 74
         }
       ],
@@ -2552,10 +3085,12 @@
       "SpawnableMapObjects": [
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 7
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 7
         }
       ],
@@ -2590,7 +3125,8 @@
           "Rarity": 1,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1257211724,
@@ -2598,7 +3134,8 @@
           "Rarity": 1,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 564435065,
@@ -2606,7 +3143,8 @@
           "Rarity": 100,
           "MinValueInclusive": 10,
           "MaxValueExclusive": 30,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1358882956,
@@ -2614,7 +3152,8 @@
           "Rarity": 79,
           "MinValueInclusive": 17,
           "MaxValueExclusive": 37,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 890072157,
@@ -2622,7 +3161,8 @@
           "Rarity": 79,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 65,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 911124433,
@@ -2630,7 +3170,8 @@
           "Rarity": 41,
           "MinValueInclusive": 7,
           "MaxValueExclusive": 35,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1030688103,
@@ -2638,7 +3179,8 @@
           "Rarity": 100,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1234559404,
@@ -2646,7 +3188,11 @@
           "Rarity": 55,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 45,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1635908658,
@@ -2654,7 +3200,8 @@
           "Rarity": 6,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 250,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1171033371,
@@ -2662,7 +3209,8 @@
           "Rarity": 32,
           "MinValueInclusive": 8,
           "MaxValueExclusive": 40,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -2684,80 +3232,99 @@
       "InsideEnemies": [
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 3
         },
         {
           "Id": "e6e31c21db2120d4cbe2406076d931ec",
+          "Name": "Lasso",
           "Rarity": 0
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 4
         },
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 4
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 2
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 5
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 5
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 3
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 7
         },
         {
           "Id": "84c44cc8b951f9f4185b25499f13ec3b",
+          "Name": "Jester",
           "Rarity": 6
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 3
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 6
         },
         {
           "Id": "7ca593ef539f8d64db3f1855bf45a2fb",
+          "Name": "Butler",
           "Rarity": 24
         },
         {
           "Id": "6d60297fb56fde7459318dc952b8898f",
+          "Name": "Clay Surgeon",
           "Rarity": 12
         },
         {
           "Id": "9834f7aade31baf4198fd2af4dd52da8",
+          "Name": "Maneater",
           "Rarity": 2
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 100
         },
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 50
         },
         {
           "Id": "acfca4ca4b68fe24e9b804eb28daf981",
+          "Name": "RadMech",
           "Rarity": 13
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 3
         }
       ],
@@ -2765,14 +3332,17 @@
       "SpawnableMapObjects": [
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 35
         }
       ],
@@ -2807,7 +3377,10 @@
           "Rarity": 94,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -2815,7 +3388,10 @@
           "Rarity": 80,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -2823,7 +3399,8 @@
           "Rarity": 28,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 701558109,
@@ -2831,7 +3408,10 @@
           "Rarity": 65,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 303772523,
@@ -2839,7 +3419,8 @@
           "Rarity": 89,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 981360405,
@@ -2847,7 +3428,8 @@
           "Rarity": 18,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -2855,7 +3437,8 @@
           "Rarity": 10,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -2863,7 +3446,11 @@
           "Rarity": 46,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 646764934,
@@ -2871,7 +3458,8 @@
           "Rarity": 15,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 637089745,
@@ -2879,7 +3467,8 @@
           "Rarity": 6,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -2887,7 +3476,8 @@
           "Rarity": 9,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 748084043,
@@ -2895,7 +3485,10 @@
           "Rarity": 20,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1393385808,
@@ -2903,7 +3496,10 @@
           "Rarity": 27,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 10347079,
@@ -2911,7 +3507,11 @@
           "Rarity": 24,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1046283282,
@@ -2919,7 +3519,8 @@
           "Rarity": 11,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -2927,7 +3528,8 @@
           "Rarity": 8,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1256791633,
@@ -2935,7 +3537,8 @@
           "Rarity": 15,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -2943,7 +3546,8 @@
           "Rarity": 18,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1774772929,
@@ -2951,7 +3555,10 @@
           "Rarity": 28,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 155403741,
@@ -2959,7 +3566,8 @@
           "Rarity": 13,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -2967,7 +3575,11 @@
           "Rarity": 19,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1257211724,
@@ -2975,7 +3587,8 @@
           "Rarity": 19,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 282248098,
@@ -2983,7 +3596,8 @@
           "Rarity": 10,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1918699375,
@@ -2991,7 +3605,8 @@
           "Rarity": 40,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 986753552,
@@ -2999,7 +3614,11 @@
           "Rarity": 40,
           "MinValueInclusive": 85,
           "MaxValueExclusive": 160,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1592453605,
@@ -3007,7 +3626,10 @@
           "Rarity": 18,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 2053029093,
@@ -3015,7 +3637,10 @@
           "Rarity": 19,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1057561792,
@@ -3023,7 +3648,8 @@
           "Rarity": 31,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 110,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1575557190,
@@ -3031,7 +3657,8 @@
           "Rarity": 6,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 346690810,
@@ -3039,7 +3666,8 @@
           "Rarity": 6,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105217076,
@@ -3047,7 +3675,8 @@
           "Rarity": 1,
           "MinValueInclusive": 1,
           "MaxValueExclusive": 500,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -3077,84 +3706,103 @@
       "InsideEnemies": [
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 27
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 44
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 16
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 3
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 55
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 32
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 25
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 7
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 2
         },
         {
           "Id": "9834f7aade31baf4198fd2af4dd52da8",
+          "Name": "Maneater",
           "Rarity": 17
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 100
         },
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 9
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 37
         },
         {
           "Id": "7b7bc3822ba240b4e8483370e00c83e8",
+          "Name": "Baboon hawk",
           "Rarity": 60
         },
         {
           "Id": "acfca4ca4b68fe24e9b804eb28daf981",
+          "Name": "RadMech",
           "Rarity": 5
         }
       ],
       "DaytimeEnemies": [
         {
           "Id": "8446abb50bf8bcd4bb9343b71fda2336",
+          "Name": "Manticoil",
           "Rarity": 100
         }
       ],
       "SpawnableMapObjects": [
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 16
         },
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 16
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 16
         }
       ],
@@ -3189,7 +3837,10 @@
           "Rarity": 37,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -3197,7 +3848,10 @@
           "Rarity": 40,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -3205,7 +3859,8 @@
           "Rarity": 16,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 303772523,
@@ -3213,7 +3868,8 @@
           "Rarity": 47,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1673206933,
@@ -3221,7 +3877,10 @@
           "Rarity": 27,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 320,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 981360405,
@@ -3229,7 +3888,8 @@
           "Rarity": 20,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1237810556,
@@ -3237,7 +3897,8 @@
           "Rarity": 8,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -3245,7 +3906,8 @@
           "Rarity": 10,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1768180206,
@@ -3253,7 +3915,11 @@
           "Rarity": 27,
           "MinValueInclusive": 100,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "c6416aab49309b640b623658f8945439"
+          ]
         },
         {
           "ItemId": 942725122,
@@ -3261,7 +3927,10 @@
           "Rarity": 34,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 310,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 11311458,
@@ -3269,7 +3938,8 @@
           "Rarity": 37,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1974712455,
@@ -3277,7 +3947,8 @@
           "Rarity": 27,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -3285,7 +3956,8 @@
           "Rarity": 35,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1092750697,
@@ -3293,7 +3965,10 @@
           "Rarity": 36,
           "MinValueInclusive": 35,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 960770791,
@@ -3301,7 +3976,8 @@
           "Rarity": 31,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 725027776,
@@ -3309,7 +3985,8 @@
           "Rarity": 15,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1371745396,
@@ -3317,7 +3994,8 @@
           "Rarity": 14,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 260,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1495750731,
@@ -3325,7 +4003,8 @@
           "Rarity": 21,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 170,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -3333,7 +4012,11 @@
           "Rarity": 33,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 748084043,
@@ -3341,7 +4024,10 @@
           "Rarity": 25,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1946320473,
@@ -3349,7 +4035,8 @@
           "Rarity": 30,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -3357,7 +4044,8 @@
           "Rarity": 22,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -3365,7 +4053,8 @@
           "Rarity": 38,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1046283282,
@@ -3373,7 +4062,8 @@
           "Rarity": 21,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1680385413,
@@ -3381,7 +4071,8 @@
           "Rarity": 16,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 2044362862,
@@ -3389,7 +4080,8 @@
           "Rarity": 24,
           "MinValueInclusive": 5,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 10347079,
@@ -3397,7 +4089,11 @@
           "Rarity": 30,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1256791633,
@@ -3405,7 +4101,8 @@
           "Rarity": 24,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -3413,7 +4110,8 @@
           "Rarity": 16,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 155403741,
@@ -3421,7 +4119,8 @@
           "Rarity": 9,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -3429,7 +4128,11 @@
           "Rarity": 17,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 930571994,
@@ -3437,7 +4140,8 @@
           "Rarity": 46,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 282248098,
@@ -3445,7 +4149,8 @@
           "Rarity": 43,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1979021990,
@@ -3453,7 +4158,8 @@
           "Rarity": 26,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 2053029093,
@@ -3461,7 +4167,10 @@
           "Rarity": 19,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1592453605,
@@ -3469,7 +4178,10 @@
           "Rarity": 8,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         }
       ],
       "Weathers": [
@@ -3491,72 +4203,89 @@
       "InsideEnemies": [
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 17
         },
         {
           "Id": "e6e31c21db2120d4cbe2406076d931ec",
+          "Name": "Lasso",
           "Rarity": 0
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 59
         },
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 54
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 20
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 62
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 59
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 54
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 38
         },
         {
           "Id": "84c44cc8b951f9f4185b25499f13ec3b",
+          "Name": "Jester",
           "Rarity": 71
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 16
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 71
         },
         {
           "Id": "25b98fa276ac7484dbc090463d455364",
+          "Name": "Masked",
           "Rarity": 32
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 32
         },
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 80
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 4
         },
         {
           "Id": "acfca4ca4b68fe24e9b804eb28daf981",
+          "Name": "RadMech",
           "Rarity": 7
         }
       ],
@@ -3564,14 +4293,17 @@
       "SpawnableMapObjects": [
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 35
         }
       ],
@@ -3606,7 +4338,10 @@
           "Rarity": 31,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -3614,7 +4349,10 @@
           "Rarity": 30,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -3622,7 +4360,8 @@
           "Rarity": 16,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 303772523,
@@ -3630,7 +4369,8 @@
           "Rarity": 26,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1673206933,
@@ -3638,7 +4378,10 @@
           "Rarity": 53,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 320,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 981360405,
@@ -3646,7 +4389,8 @@
           "Rarity": 20,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1237810556,
@@ -3654,7 +4398,8 @@
           "Rarity": 33,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -3662,7 +4407,8 @@
           "Rarity": 10,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1768180206,
@@ -3670,7 +4416,11 @@
           "Rarity": 55,
           "MinValueInclusive": 100,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "c6416aab49309b640b623658f8945439"
+          ]
         },
         {
           "ItemId": 942725122,
@@ -3678,7 +4428,10 @@
           "Rarity": 62,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 310,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 11311458,
@@ -3686,7 +4439,8 @@
           "Rarity": 56,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1974712455,
@@ -3694,7 +4448,8 @@
           "Rarity": 42,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -3702,7 +4457,8 @@
           "Rarity": 64,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1092750697,
@@ -3710,7 +4466,10 @@
           "Rarity": 42,
           "MinValueInclusive": 35,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 960770791,
@@ -3718,7 +4477,8 @@
           "Rarity": 16,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 725027776,
@@ -3726,7 +4486,8 @@
           "Rarity": 15,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1371745396,
@@ -3734,7 +4495,8 @@
           "Rarity": 14,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 260,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1495750731,
@@ -3742,7 +4504,8 @@
           "Rarity": 10,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 170,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -3750,7 +4513,11 @@
           "Rarity": 16,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 748084043,
@@ -3758,7 +4525,10 @@
           "Rarity": 42,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1946320473,
@@ -3766,7 +4536,8 @@
           "Rarity": 55,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -3774,7 +4545,8 @@
           "Rarity": 25,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -3782,7 +4554,8 @@
           "Rarity": 20,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1046283282,
@@ -3790,7 +4563,8 @@
           "Rarity": 27,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1680385413,
@@ -3798,7 +4572,8 @@
           "Rarity": 30,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 2044362862,
@@ -3806,7 +4581,8 @@
           "Rarity": 60,
           "MinValueInclusive": 5,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 10347079,
@@ -3814,7 +4590,11 @@
           "Rarity": 30,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1256791633,
@@ -3822,7 +4602,8 @@
           "Rarity": 39,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -3830,7 +4611,8 @@
           "Rarity": 31,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 155403741,
@@ -3838,7 +4620,8 @@
           "Rarity": 13,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -3846,7 +4629,11 @@
           "Rarity": 15,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 930571994,
@@ -3854,7 +4641,8 @@
           "Rarity": 53,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 282248098,
@@ -3862,7 +4650,8 @@
           "Rarity": 51,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1979021990,
@@ -3870,7 +4659,8 @@
           "Rarity": 43,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1313416225,
@@ -3878,7 +4668,8 @@
           "Rarity": 32,
           "MinValueInclusive": 255,
           "MaxValueExclusive": 525,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 531283125,
@@ -3886,7 +4677,11 @@
           "Rarity": 26,
           "MinValueInclusive": 200,
           "MaxValueExclusive": 400,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1257211724,
@@ -3894,7 +4689,8 @@
           "Rarity": 19,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1750501098,
@@ -3902,7 +4698,8 @@
           "Rarity": 39,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 180,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1592453605,
@@ -3910,7 +4707,10 @@
           "Rarity": 20,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1057561792,
@@ -3918,7 +4718,8 @@
           "Rarity": 11,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 110,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 346690810,
@@ -3926,7 +4727,8 @@
           "Rarity": 22,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1575557190,
@@ -3934,7 +4736,8 @@
           "Rarity": 39,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 105217076,
@@ -3942,7 +4745,8 @@
           "Rarity": 1,
           "MinValueInclusive": 1,
           "MaxValueExclusive": 500,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -3968,120 +4772,148 @@
       "InsideEnemies": [
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 35
         },
         {
           "Id": "e6e31c21db2120d4cbe2406076d931ec",
+          "Name": "Lasso",
           "Rarity": 0
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 100
         },
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 77
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 73
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 100
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 86
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 92
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 95
         },
         {
           "Id": "84c44cc8b951f9f4185b25499f13ec3b",
+          "Name": "Jester",
           "Rarity": 92
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 90
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 100
         },
         {
           "Id": "25b98fa276ac7484dbc090463d455364",
+          "Name": "Masked",
           "Rarity": 89
         },
         {
           "Id": "7ca593ef539f8d64db3f1855bf45a2fb",
+          "Name": "Butler",
           "Rarity": 91
         },
         {
           "Id": "6d60297fb56fde7459318dc952b8898f",
+          "Name": "Clay Surgeon",
           "Rarity": 45
         },
         {
           "Id": "9834f7aade31baf4198fd2af4dd52da8",
+          "Name": "Maneater",
           "Rarity": 42
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 23
         },
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 19
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 6
         },
         {
           "Id": "acfca4ca4b68fe24e9b804eb28daf981",
+          "Name": "RadMech",
           "Rarity": 45
         },
         {
           "Id": "7b7bc3822ba240b4e8483370e00c83e8",
+          "Name": "Baboon hawk",
           "Rarity": 7
         }
       ],
       "DaytimeEnemies": [
         {
           "Id": "8446abb50bf8bcd4bb9343b71fda2336",
+          "Name": "Manticoil",
           "Rarity": 90
         },
         {
           "Id": "0d134461f9c101e448989582e2e14b31",
+          "Name": "Red Locust Bees",
           "Rarity": 30
         },
         {
           "Id": "2ae101b95f3199641a937978ac5e8255",
+          "Name": "Tulip Snake",
           "Rarity": 5
         },
         {
           "Id": "f931ce54a6611d64d961ac8be97b29d0",
+          "Name": "Docile Locust Bees",
           "Rarity": 67
         }
       ],
       "SpawnableMapObjects": [
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 35
         }
       ],
@@ -4116,7 +4948,10 @@
           "Rarity": 37,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -4124,7 +4959,10 @@
           "Rarity": 40,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -4132,7 +4970,8 @@
           "Rarity": 16,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 303772523,
@@ -4140,7 +4979,8 @@
           "Rarity": 55,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1673206933,
@@ -4148,7 +4988,10 @@
           "Rarity": 27,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 320,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 981360405,
@@ -4156,7 +4999,8 @@
           "Rarity": 20,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1237810556,
@@ -4164,7 +5008,8 @@
           "Rarity": 8,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -4172,7 +5017,8 @@
           "Rarity": 10,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1768180206,
@@ -4180,7 +5026,11 @@
           "Rarity": 27,
           "MinValueInclusive": 100,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "c6416aab49309b640b623658f8945439"
+          ]
         },
         {
           "ItemId": 942725122,
@@ -4188,7 +5038,10 @@
           "Rarity": 14,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 310,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 11311458,
@@ -4196,7 +5049,8 @@
           "Rarity": 49,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1974712455,
@@ -4204,7 +5058,8 @@
           "Rarity": 15,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 200,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -4212,7 +5067,8 @@
           "Rarity": 49,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1092750697,
@@ -4220,7 +5076,10 @@
           "Rarity": 31,
           "MinValueInclusive": 35,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 960770791,
@@ -4228,7 +5087,8 @@
           "Rarity": 16,
           "MinValueInclusive": 20,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 725027776,
@@ -4236,7 +5096,8 @@
           "Rarity": 15,
           "MinValueInclusive": 40,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1371745396,
@@ -4244,7 +5105,8 @@
           "Rarity": 14,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 260,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1495750731,
@@ -4252,7 +5114,8 @@
           "Rarity": 21,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 170,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -4260,7 +5123,11 @@
           "Rarity": 42,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 748084043,
@@ -4268,7 +5135,10 @@
           "Rarity": 37,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1946320473,
@@ -4276,7 +5146,8 @@
           "Rarity": 49,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -4284,7 +5155,8 @@
           "Rarity": 45,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 495388324,
@@ -4292,7 +5164,8 @@
           "Rarity": 48,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 225,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1046283282,
@@ -4300,7 +5173,8 @@
           "Rarity": 37,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1680385413,
@@ -4308,7 +5182,8 @@
           "Rarity": 30,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 2044362862,
@@ -4316,7 +5191,8 @@
           "Rarity": 47,
           "MinValueInclusive": 5,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 10347079,
@@ -4324,7 +5200,11 @@
           "Rarity": 47,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1256791633,
@@ -4332,7 +5212,8 @@
           "Rarity": 39,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -4340,7 +5221,8 @@
           "Rarity": 31,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 155403741,
@@ -4348,7 +5230,8 @@
           "Rarity": 13,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -4356,7 +5239,11 @@
           "Rarity": 17,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 930571994,
@@ -4364,7 +5251,8 @@
           "Rarity": 46,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 282248098,
@@ -4372,7 +5260,8 @@
           "Rarity": 43,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1979021990,
@@ -4380,7 +5269,8 @@
           "Rarity": 43,
           "MinValueInclusive": 15,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -4406,54 +5296,67 @@
       "InsideEnemies": [
         {
           "Id": "00ec316df11ddb74aa54ba5d01db1bed",
+          "Name": "Girl",
           "Rarity": 28
         },
         {
           "Id": "e6e31c21db2120d4cbe2406076d931ec",
+          "Name": "Lasso",
           "Rarity": 0
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 59
         },
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 54
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 20
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 62
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 44
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 54
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 38
         },
         {
           "Id": "84c44cc8b951f9f4185b25499f13ec3b",
+          "Name": "Jester",
           "Rarity": 56
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 16
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 71
         },
         {
           "Id": "25b98fa276ac7484dbc090463d455364",
+          "Name": "Masked",
           "Rarity": 32
         }
       ],
@@ -4462,10 +5365,12 @@
       "SpawnableMapObjects": [
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 35
         },
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 35
         }
       ],
@@ -4496,7 +5401,10 @@
           "Rarity": 81,
           "MinValueInclusive": 90,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1682531814,
@@ -4504,7 +5412,10 @@
           "Rarity": 80,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 786418168,
@@ -4512,7 +5423,8 @@
           "Rarity": 28,
           "MinValueInclusive": 70,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 701558109,
@@ -4520,7 +5432,10 @@
           "Rarity": 100,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 55,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 303772523,
@@ -4528,7 +5443,8 @@
           "Rarity": 66,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 80,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 981360405,
@@ -4536,7 +5452,8 @@
           "Rarity": 25,
           "MinValueInclusive": 60,
           "MaxValueExclusive": 110,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1,
@@ -4544,7 +5461,8 @@
           "Rarity": 6,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 250,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1962804381,
@@ -4552,7 +5470,11 @@
           "Rarity": 52,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 140,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 646764934,
@@ -4560,7 +5482,8 @@
           "Rarity": 28,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 120,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 637089745,
@@ -4568,7 +5491,8 @@
           "Rarity": 52,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 100,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 251645038,
@@ -4576,7 +5500,8 @@
           "Rarity": 43,
           "MinValueInclusive": 140,
           "MaxValueExclusive": 220,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 748084043,
@@ -4584,7 +5509,10 @@
           "Rarity": 14,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 150,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1393385808,
@@ -4592,7 +5520,10 @@
           "Rarity": 28,
           "MinValueInclusive": 50,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 10347079,
@@ -4600,7 +5531,11 @@
           "Rarity": 23,
           "MinValueInclusive": 80,
           "MaxValueExclusive": 140,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "60c15b1e0b537d2478d6fcf7320cb165",
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1046283282,
@@ -4608,7 +5543,8 @@
           "Rarity": 12,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 210,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1934760839,
@@ -4616,7 +5552,8 @@
           "Rarity": 8,
           "MinValueInclusive": 120,
           "MaxValueExclusive": 160,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1256791633,
@@ -4624,7 +5561,8 @@
           "Rarity": 23,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 225846342,
@@ -4632,7 +5570,8 @@
           "Rarity": 18,
           "MinValueInclusive": 130,
           "MaxValueExclusive": 180,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 1774772929,
@@ -4640,7 +5579,10 @@
           "Rarity": 14,
           "MinValueInclusive": 45,
           "MaxValueExclusive": 90,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 155403741,
@@ -4648,7 +5590,8 @@
           "Rarity": 9,
           "MinValueInclusive": 25,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 152767,
@@ -4656,7 +5599,11 @@
           "Rarity": 17,
           "MinValueInclusive": 30,
           "MaxValueExclusive": 70,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1257211724,
@@ -4664,7 +5611,8 @@
           "Rarity": 52,
           "MinValueInclusive": 55,
           "MaxValueExclusive": 130,
-          "TwoHanded": false
+          "TwoHanded": false,
+          "SpawnPositionGroupIds": []
         },
         {
           "ItemId": 986753552,
@@ -4672,7 +5620,11 @@
           "Rarity": 14,
           "MinValueInclusive": 85,
           "MaxValueExclusive": 160,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384",
+            "60c15b1e0b537d2478d6fcf7320cb165"
+          ]
         },
         {
           "ItemId": 1592453605,
@@ -4680,7 +5632,10 @@
           "Rarity": 45,
           "MinValueInclusive": 150,
           "MaxValueExclusive": 220,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": [
+            "bffc7b403751b844593beec627b67384"
+          ]
         },
         {
           "ItemId": 1750501098,
@@ -4688,7 +5643,8 @@
           "Rarity": 26,
           "MinValueInclusive": 110,
           "MaxValueExclusive": 180,
-          "TwoHanded": true
+          "TwoHanded": true,
+          "SpawnPositionGroupIds": []
         }
       ],
       "Weathers": [
@@ -4706,60 +5662,74 @@
       "InsideEnemies": [
         {
           "Id": "8bb6d2f2b39025e4bbfec8a03e7673ed",
+          "Name": "Centipede",
           "Rarity": 15
         },
         {
           "Id": "b0ab30b313dcde844b9f84288c917d04",
+          "Name": "Bunker Spider",
           "Rarity": 23
         },
         {
           "Id": "cdb8886d7ef85b94abab9c1700bdb788",
+          "Name": "Hoarding bug",
           "Rarity": 86
         },
         {
           "Id": "135f821cecae76c4abe22d7bee91f58d",
+          "Name": "Flowerman",
           "Rarity": 3
         },
         {
           "Id": "b584e1ed06a6dc4489b3c54eb95f163a",
+          "Name": "Crawler",
           "Rarity": 30
         },
         {
           "Id": "4b5a36b63698ab549a8e7c7b2d5e1807",
+          "Name": "Blob",
           "Rarity": 42
         },
         {
           "Id": "2741d05362cd6634780813a931dafe80",
+          "Name": "Spring",
           "Rarity": 25
         },
         {
           "Id": "165689fb3afbb3d44b74dfcdbad260d3",
+          "Name": "Puffer",
           "Rarity": 35
         },
         {
           "Id": "a747fc336a58a704fb083b24e6528718",
+          "Name": "Nutcracker",
           "Rarity": 22
         },
         {
           "Id": "6d60297fb56fde7459318dc952b8898f",
+          "Name": "Clay Surgeon",
           "Rarity": 36
         }
       ],
       "OutsideEnemies": [
         {
           "Id": "0460868ae8eebe94e8ab90d66dbb43c5",
+          "Name": "MouthDog",
           "Rarity": 3
         },
         {
           "Id": "b179eb076abe06d40afc5a1020244cc6",
+          "Name": "ForestGiant",
           "Rarity": 3
         },
         {
           "Id": "e5bcca6f28a0f3541983af11f7c372eb",
+          "Name": "Earth Leviathan",
           "Rarity": 9
         },
         {
           "Id": "acfca4ca4b68fe24e9b804eb28daf981",
+          "Name": "RadMech",
           "Rarity": 100
         }
       ],
@@ -4767,14 +5737,17 @@
       "SpawnableMapObjects": [
         {
           "Id": "f61c23f0968567a4bbdf63749ed53614",
+          "Name": "Landmine",
           "MaxObjectsEstimate": 16
         },
         {
           "Id": "d1cac159f71e5d64da7044f2801e51fd",
+          "Name": "TurretContainer",
           "MaxObjectsEstimate": 16
         },
         {
           "Id": "663e71d51ba6a234a8825f3915c529b4",
+          "Name": "SpikeRoofTrapHazard",
           "MaxObjectsEstimate": 16
         }
       ],
@@ -4802,6 +5775,72 @@
     "HourTimeBetweenEnemySpawnBatches": 2,
     "MinEnemiesToSpawn": 0,
     "MinOutsideEnemiesToSpawn": 0,
-    "PowerOffAtStartChance": 0.08
+    "PowerOffAtStartChance": 0.08,
+    "TotalRandomScrapSpawnPoints": 120,
+    "EstimatedLockableDoorCount": 8,
+    "EstimatedApparatusSpawnerCount": 4,
+    "SpawnGroupCapacities": [
+      {
+        "GroupId": "bffc7b403751b844593beec627b67384",
+        "GroupName": "GeneralItemClass",
+        "Count": 48
+      },
+      {
+        "GroupId": "c6416aab49309b640b623658f8945439",
+        "GroupName": "SmallItems",
+        "Count": 46
+      },
+      {
+        "GroupId": "60c15b1e0b537d2478d6fcf7320cb165",
+        "GroupName": "TabletopItems",
+        "Count": 26
+      }
+    ],
+    "ApparatusItemId": 3,
+    "ApparatusItemName": "Apparatus",
+    "ApparatusMinValueInclusive": 40,
+    "ApparatusMaxValueExclusive": 120,
+    "DungeonFlows": [
+      {
+        "Id": 0,
+        "Name": "Level1Flow",
+        "Theme": "Factory",
+        "EstimatedLockableDoorCount": 0,
+        "EstimatedApparatusSpawnerCount": 4,
+        "TilePoolPrefabCount": 18
+      },
+      {
+        "Id": 1,
+        "Name": "Level2Flow",
+        "Theme": "Mansion",
+        "EstimatedLockableDoorCount": 0,
+        "EstimatedApparatusSpawnerCount": 0,
+        "TilePoolPrefabCount": 22
+      },
+      {
+        "Id": 2,
+        "Name": "Level1FlowExtraLarge",
+        "Theme": "Factory",
+        "EstimatedLockableDoorCount": 0,
+        "EstimatedApparatusSpawnerCount": 4,
+        "TilePoolPrefabCount": 18
+      },
+      {
+        "Id": 3,
+        "Name": "Level1Flow3Exits",
+        "Theme": "Factory",
+        "EstimatedLockableDoorCount": 0,
+        "EstimatedApparatusSpawnerCount": 4,
+        "TilePoolPrefabCount": 18
+      },
+      {
+        "Id": 4,
+        "Name": "Level3Flow",
+        "Theme": "Mineshaft",
+        "EstimatedLockableDoorCount": 0,
+        "EstimatedApparatusSpawnerCount": 0,
+        "TilePoolPrefabCount": 11
+      }
+    ]
   }
 }

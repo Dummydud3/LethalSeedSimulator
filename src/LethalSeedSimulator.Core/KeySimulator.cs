@@ -4,15 +4,22 @@ namespace LethalSeedSimulator.Core;
 
 public sealed class KeySimulator
 {
-    public KeySpawnReport Simulate(LevelRule level, int runSeed, int levelRandomOffset)
+    public KeySpawnReport Simulate(
+        LevelRule level,
+        GlobalRules globalRules,
+        int rolledDungeonFlowId,
+        int runSeed,
+        int levelRandomOffset)
     {
         var levelRandom = new Random(runSeed + levelRandomOffset);
-        var dungeonFlowId = RollDungeonFlowId(level, levelRandom);
+        var dungeonFlowId = rolledDungeonFlowId;
+        ConsumeDungeonFlowRoll(level, levelRandom);
         var dungeonSeed = levelRandom.Next();
-        var keyRandom = new Random(dungeonSeed + 914);
-
-        var maxLocks = Math.Max(2, level.DungeonFlowTypes.Count + 2);
-        var lockCount = keyRandom.Next(1, maxLocks + 1);
+        var flow = globalRules.DungeonFlows.FirstOrDefault(x => x.Id == dungeonFlowId);
+        var lockBaseline = flow is not null && flow.EstimatedLockableDoorCount > 0
+            ? flow.EstimatedLockableDoorCount
+            : globalRules.EstimatedLockableDoorCount;
+        var lockCount = RollLockedDoorCount(lockBaseline, levelRandom);
         var placements = new List<KeySpawnResult>(lockCount);
         for (var i = 0; i < lockCount; i++)
         {
@@ -27,19 +34,42 @@ public sealed class KeySimulator
             KeyCount = lockCount,
             DungeonSeed = dungeonSeed,
             DungeonFlowId = dungeonFlowId,
+            DungeonFlowName = flow?.Name ?? $"Flow{dungeonFlowId}",
+            DungeonFlowTheme = flow?.Theme ?? "Unknown",
             Placements = placements
         };
     }
 
-    private static int RollDungeonFlowId(LevelRule level, Random levelRandom)
+    private static int RollLockedDoorCount(int estimatedLockableDoorCount, Random levelRandom)
     {
-        if (level.DungeonFlowTypes.Count == 0)
+        if (estimatedLockableDoorCount <= 0)
         {
             return 0;
         }
 
+        var chance = 1.1;
+        var locked = 0;
+        for (var i = 0; i < estimatedLockableDoorCount; i++)
+        {
+            if (levelRandom.NextDouble() < chance)
+            {
+                locked++;
+            }
+
+            chance /= 1.55;
+        }
+
+        return locked;
+    }
+
+    private static void ConsumeDungeonFlowRoll(LevelRule level, Random levelRandom)
+    {
+        if (level.DungeonFlowTypes.Count == 0)
+        {
+            return;
+        }
+
         var weights = level.DungeonFlowTypes.Select(x => x.Rarity).ToArray();
-        var index = WeightedPicker.GetRandomWeightedIndex(weights, levelRandom);
-        return level.DungeonFlowTypes[Math.Clamp(index, 0, level.DungeonFlowTypes.Count - 1)].Id;
+        WeightedPicker.GetRandomWeightedIndex(weights, levelRandom);
     }
 }

@@ -93,6 +93,8 @@ public sealed class ScrapRule
     public int MaxValueExclusive { get; init; }
 
     public bool TwoHanded { get; init; }
+
+    public List<string> SpawnPositionGroupIds { get; init; } = [];
 }
 
 public sealed class WeatherRule
@@ -130,6 +132,8 @@ public sealed class SeedReport
 
     public required KeySpawnReport Keys { get; init; }
 
+    public required ApparatusReport Apparatus { get; init; }
+
     [JsonIgnore]
     public IReadOnlyDictionary<int, int> ItemCounts =>
         ScrapRolls.GroupBy(x => x.ItemId).ToDictionary(x => x.Key, x => x.Count());
@@ -159,11 +163,31 @@ public sealed class GlobalRules
     public int MinOutsideEnemiesToSpawn { get; init; }
 
     public float PowerOffAtStartChance { get; init; } = 0.08f;
+
+    public int TotalRandomScrapSpawnPoints { get; init; }
+
+    public int EstimatedLockableDoorCount { get; init; }
+
+    public int EstimatedApparatusSpawnerCount { get; init; }
+
+    public List<SpawnGroupCapacityRule> SpawnGroupCapacities { get; init; } = [];
+
+    public int ApparatusItemId { get; init; } = 3;
+
+    public string ApparatusItemName { get; init; } = "Apparatus";
+
+    public int ApparatusMinValueInclusive { get; init; }
+
+    public int ApparatusMaxValueExclusive { get; init; }
+
+    public List<DungeonFlowDefinition> DungeonFlows { get; init; } = [];
 }
 
 public sealed class EnemyRule
 {
     public required string Id { get; init; }
+
+    public required string Name { get; init; }
 
     public required int Rarity { get; init; }
 }
@@ -171,6 +195,8 @@ public sealed class EnemyRule
 public sealed class MapObjectRule
 {
     public required string Id { get; init; }
+
+    public required string Name { get; init; }
 
     public int MaxObjectsEstimate { get; init; }
 }
@@ -208,7 +234,7 @@ public sealed class EnemySpawnReport
 
 public sealed class EnemySpawnRoll
 {
-    public required string EnemyId { get; init; }
+    public required string EnemyName { get; init; }
 
     public required string Category { get; init; }
 }
@@ -228,7 +254,7 @@ public sealed class HazardPropReport
 
 public sealed class MapObjectSpawn
 {
-    public required string ObjectId { get; init; }
+    public required string ObjectName { get; init; }
 
     public int Count { get; init; }
 }
@@ -246,6 +272,10 @@ public sealed class KeySpawnReport
 
     public int DungeonFlowId { get; init; }
 
+    public string DungeonFlowName { get; init; } = "Unknown";
+
+    public string DungeonFlowTheme { get; init; } = "Unknown";
+
     public List<KeySpawnResult> Placements { get; init; } = [];
 }
 
@@ -256,4 +286,37 @@ public sealed class KeySpawnResult
     public int KeyItemId { get; init; } = 14;
 
     public string KeyItemName { get; init; } = "Key";
+}
+
+public sealed class SpawnGroupCapacityRule
+{
+    public required string GroupId { get; init; }
+
+    public required string GroupName { get; init; }
+
+    public int Count { get; init; }
+}
+
+public sealed class ApparatusReport
+{
+    public bool SpawnedFromSyncedProps { get; init; }
+
+    public int EstimatedSpawnerCount { get; init; }
+
+    public int Value { get; init; }
+}
+
+public sealed class DungeonFlowDefinition
+{
+    public int Id { get; init; }
+
+    public required string Name { get; init; }
+
+    public required string Theme { get; init; }
+
+    public int EstimatedLockableDoorCount { get; init; }
+
+    public int EstimatedApparatusSpawnerCount { get; init; }
+
+    public int TilePoolPrefabCount { get; init; }
 }

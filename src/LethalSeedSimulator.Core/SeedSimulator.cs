@@ -60,6 +60,8 @@ public sealed class SeedSimulator
 
         var fixedIndex = RollForcedScrapIndex(level, anomalyRandom);
         var scrapWeights = BuildScrapWeights(level, increasedScrapSpawnRateIndex);
+        var spawnGroupCapacities = rules.GlobalRules.SpawnGroupCapacities
+            .ToDictionary(x => x.GroupId, x => x.Count, StringComparer.OrdinalIgnoreCase);
 
         var results = new List<ScrapRollResult>(scrapCount);
         var values = new List<int>(scrapCount);
@@ -67,6 +69,11 @@ public sealed class SeedSimulator
         {
             var index = fixedIndex ?? WeightedPicker.GetRandomWeightedIndex(scrapWeights, anomalyRandom);
             var scrap = level.SpawnableScrap[index];
+            if (!CanSpawnScrap(scrap, fixedIndex is not null, rules.GlobalRules.TotalRandomScrapSpawnPoints, spawnGroupCapacities))
+            {
+                continue;
+            }
+
             var rawValue = anomalyRandom.Next(scrap.MinValueInclusive, scrap.MaxValueExclusive);
             var value = (int)(rawValue * rules.GlobalRules.ScrapValueMultiplier);
             if (fixedIndex is not null)
@@ -114,6 +121,25 @@ public sealed class SeedSimulator
             }
         }
 
+        var flowProfile = rules.GlobalRules.DungeonFlows.FirstOrDefault(x => x.Id == currentDungeonType);
+        var apparatusSpawnerCount = flowProfile?.EstimatedApparatusSpawnerCount ?? rules.GlobalRules.EstimatedApparatusSpawnerCount;
+        var apparatusSpawned = apparatusSpawnerCount > 0;
+        var apparatusValue = 0;
+        if (apparatusSpawned && rules.GlobalRules.ApparatusMaxValueExclusive > rules.GlobalRules.ApparatusMinValueInclusive)
+        {
+            var rawApparatusValue = anomalyRandom.Next(
+                rules.GlobalRules.ApparatusMinValueInclusive,
+                rules.GlobalRules.ApparatusMaxValueExclusive);
+            apparatusValue = (int)(rawApparatusValue * rules.GlobalRules.ScrapValueMultiplier);
+            values.Add(apparatusValue);
+            results.Add(new ScrapRollResult
+            {
+                ItemId = rules.GlobalRules.ApparatusItemId,
+                ItemName = rules.GlobalRules.ApparatusItemName,
+                Value = apparatusValue
+            });
+        }
+
         var total = values.Sum();
 
         return new SeedReport
@@ -130,7 +156,13 @@ public sealed class SeedSimulator
             EnemySpawn = enemySpawnSimulator.Simulate(rules, level, runSeed),
             HazardProp = hazardPropSimulator.Simulate(rules, level, runSeed),
             WeatherReport = weatherReport,
-            Keys = keySimulator.Simulate(level, runSeed, rules.Offsets.LevelRandom)
+            Keys = keySimulator.Simulate(level, rules.GlobalRules, currentDungeonType, runSeed, rules.Offsets.LevelRandom),
+            Apparatus = new ApparatusReport
+            {
+                SpawnedFromSyncedProps = apparatusSpawned,
+                EstimatedSpawnerCount = apparatusSpawnerCount,
+                Value = apparatusValue
+            }
         };
     }
 
@@ -194,6 +226,34 @@ public sealed class SeedSimulator
         var weights = level.DungeonFlowTypes.Select(x => x.Rarity).ToArray();
         var index = WeightedPicker.GetRandomWeightedIndex(weights, levelRandom);
         return level.DungeonFlowTypes[Math.Clamp(index, 0, level.DungeonFlowTypes.Count - 1)].Id;
+    }
+
+    private static bool CanSpawnScrap(
+        ScrapRule scrap,
+        bool forcedAnySpawner,
+        int totalSpawnPoints,
+        IReadOnlyDictionary<string, int> groupCapacities)
+    {
+        if (totalSpawnPoints <= 0)
+        {
+            return true;
+        }
+
+        if (forcedAnySpawner || scrap.SpawnPositionGroupIds.Count == 0)
+        {
+            return totalSpawnPoints > 0;
+        }
+
+        var compatible = 0;
+        foreach (var group in scrap.SpawnPositionGroupIds)
+        {
+            if (groupCapacities.TryGetValue(group, out var count))
+            {
+                compatible += count;
+            }
+        }
+
+        return compatible > 0;
     }
 
 }

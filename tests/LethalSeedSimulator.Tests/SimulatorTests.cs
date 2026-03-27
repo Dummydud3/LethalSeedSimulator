@@ -48,6 +48,7 @@ public sealed class SimulatorTests
             HazardProp = new HazardPropReport(),
             WeatherReport = new WeatherReport { AssignedWeatherByLevelId = new Dictionary<string, string>() },
             Keys = new KeySpawnReport { KeyCount = 0, DungeonSeed = 0, DungeonFlowId = 0 },
+            Apparatus = new ApparatusReport { SpawnedFromSyncedProps = false, EstimatedSpawnerCount = 0, Value = 0 },
             ScrapRolls =
             [
                 new ScrapRollResult { ItemId = 152767, ItemName = "Gold bar", Value = 100 },

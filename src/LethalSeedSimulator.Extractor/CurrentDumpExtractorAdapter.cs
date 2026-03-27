@@ -50,7 +50,12 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         };
 
         var itemByGuid = ParseScrapItems(monoBehaviourPath);
-        var levels = ParseLevelsFromAssets(monoBehaviourPath, itemByGuid);
+        var enemyByGuid = ParseEnemyNames(monoBehaviourPath);
+        var prefabByGuid = ParsePrefabNames(sourceRootPath);
+        var dungeonFlowCatalog = ParseDungeonFlowCatalog(sourceRootPath, sampleScene, monoBehaviourPath);
+        var itemGroupNames = ParseItemGroupNames(monoBehaviourPath);
+        var placementRules = ParsePlacementRules(sourceRootPath, itemGroupNames);
+        var levels = ParseLevelsFromAssets(monoBehaviourPath, itemByGuid, enemyByGuid, prefabByGuid);
         if (levels.Count == 0)
         {
             throw new InvalidOperationException("No SelectableLevel assets were parsed from Assets/MonoBehaviour.");
@@ -67,7 +72,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             },
             Offsets = offsets,
             Levels = levels,
-            GlobalRules = ParseGlobalRules(roundManager, sampleScene)
+            GlobalRules = ParseGlobalRules(roundManager, sampleScene, placementRules, itemByGuid, dungeonFlowCatalog)
         };
     }
 
@@ -129,14 +134,19 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
                 Rarity = 1,
                 MinValueInclusive = minValue,
                 MaxValueExclusive = maxValue,
-                TwoHanded = twoHanded
+                TwoHanded = twoHanded,
+                SpawnPositionGroupIds = ParseSpawnPositionGroups(content)
             };
         }
 
         return map;
     }
 
-    private static List<LevelRule> ParseLevelsFromAssets(string monoBehaviourPath, IReadOnlyDictionary<string, ScrapRule> itemByGuid)
+    private static List<LevelRule> ParseLevelsFromAssets(
+        string monoBehaviourPath,
+        IReadOnlyDictionary<string, ScrapRule> itemByGuid,
+        IReadOnlyDictionary<string, string> enemyByGuid,
+        IReadOnlyDictionary<string, string> prefabByGuid)
     {
         var levels = new List<LevelRule>();
         foreach (var levelAsset in Directory.GetFiles(monoBehaviourPath, "*Level.asset"))
@@ -169,10 +179,10 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
                 Weathers = ParseWeatherRules(content),
                 OverrideWeather = ExtractIntField(content, "overrideWeather") == 1,
                 OverrideWeatherType = WeatherName(ExtractIntField(content, "overrideWeatherType")),
-                InsideEnemies = ParseEnemyRules(content, "Enemies:", "OutsideEnemies:"),
-                OutsideEnemies = ParseEnemyRules(content, "OutsideEnemies:", "DaytimeEnemies:"),
-                DaytimeEnemies = ParseEnemyRules(content, "DaytimeEnemies:", "maxOutsideEnemyPowerCount:"),
-                SpawnableMapObjects = ParseMapObjectRules(content),
+                InsideEnemies = ParseEnemyRules(content, "Enemies:", "OutsideEnemies:", enemyByGuid),
+                OutsideEnemies = ParseEnemyRules(content, "OutsideEnemies:", "DaytimeEnemies:", enemyByGuid),
+                DaytimeEnemies = ParseEnemyRules(content, "DaytimeEnemies:", "maxOutsideEnemyPowerCount:", enemyByGuid),
+                SpawnableMapObjects = ParseMapObjectRules(content, prefabByGuid),
                 SpawnableOutsideObjectsCount = ParseOutsideObjectCount(content),
                 DungeonFlowTypes = ParseDungeonFlowRules(content)
             };
@@ -216,7 +226,8 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
                 Rarity = rarity,
                 MinValueInclusive = item.MinValueInclusive,
                 MaxValueExclusive = item.MaxValueExclusive,
-                TwoHanded = item.TwoHanded
+                TwoHanded = item.TwoHanded,
+                SpawnPositionGroupIds = item.SpawnPositionGroupIds
             });
         }
 
@@ -246,7 +257,11 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         return list;
     }
 
-    private static List<EnemyRule> ParseEnemyRules(string levelAssetContent, string start, string end)
+    private static List<EnemyRule> ParseEnemyRules(
+        string levelAssetContent,
+        string start,
+        string end,
+        IReadOnlyDictionary<string, string> enemyByGuid)
     {
         var section = ExtractSection(levelAssetContent, start, end);
         if (string.IsNullOrWhiteSpace(section))
@@ -264,6 +279,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             list.Add(new EnemyRule
             {
                 Id = match.Groups[1].Value,
+                Name = enemyByGuid.TryGetValue(match.Groups[1].Value, out var name) ? name : match.Groups[1].Value,
                 Rarity = int.Parse(match.Groups[2].Value)
             });
         }
@@ -271,7 +287,9 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         return list;
     }
 
-    private static List<MapObjectRule> ParseMapObjectRules(string levelAssetContent)
+    private static List<MapObjectRule> ParseMapObjectRules(
+        string levelAssetContent,
+        IReadOnlyDictionary<string, string> prefabByGuid)
     {
         var section = ExtractSection(levelAssetContent, "spawnableMapObjects:", "spawnableOutsideObjects:");
         if (string.IsNullOrWhiteSpace(section))
@@ -298,6 +316,7 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             list.Add(new MapObjectRule
             {
                 Id = id.Groups[1].Value,
+                Name = prefabByGuid.TryGetValue(id.Groups[1].Value, out var name) ? name : id.Groups[1].Value,
                 MaxObjectsEstimate = maxObjectsEstimate
             });
         }
@@ -345,10 +364,17 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         return matches.Count;
     }
 
-    private static GlobalRules ParseGlobalRules(string roundManagerCode, string sampleScene)
+    private static GlobalRules ParseGlobalRules(
+        string roundManagerCode,
+        string sampleScene,
+        PlacementRules placementRules,
+        IReadOnlyDictionary<string, ScrapRule> itemByGuid,
+        IReadOnlyList<DungeonFlowDefinition> dungeonFlowCatalog)
     {
         var sceneSettings = ParseSceneRoundManagerSettings(sampleScene);
         var scrapAmountFromCode = ParseFloat(roundManagerCode, "scrapAmountMultiplier\\s*=\\s*([0-9]+(?:\\.[0-9]+)?)", 1f);
+        var apparatusItem = itemByGuid.Values.FirstOrDefault(x =>
+            string.Equals(x.ItemName, "Apparatus", StringComparison.OrdinalIgnoreCase));
         return new GlobalRules
         {
             ScrapAmountMultiplier = sceneSettings.ScrapAmountMultiplier ?? scrapAmountFromCode,
@@ -357,8 +383,442 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
             HourTimeBetweenEnemySpawnBatches = sceneSettings.HourTimeBetweenEnemySpawnBatches ?? 2f,
             MinEnemiesToSpawn = sceneSettings.MinEnemiesToSpawn ?? 0,
             MinOutsideEnemiesToSpawn = sceneSettings.MinOutsideEnemiesToSpawn ?? 0,
-            PowerOffAtStartChance = 0.08f
+            PowerOffAtStartChance = 0.08f,
+            TotalRandomScrapSpawnPoints = placementRules.TotalRandomScrapSpawnPoints,
+            EstimatedLockableDoorCount = placementRules.EstimatedLockableDoorCount,
+            EstimatedApparatusSpawnerCount = placementRules.EstimatedApparatusSpawnerCount,
+            SpawnGroupCapacities = placementRules.SpawnGroupCapacities,
+            ApparatusItemId = apparatusItem?.ItemId ?? 3,
+            ApparatusItemName = apparatusItem?.ItemName ?? "Apparatus",
+            ApparatusMinValueInclusive = apparatusItem?.MinValueInclusive ?? 0,
+            ApparatusMaxValueExclusive = apparatusItem?.MaxValueExclusive ?? 0,
+            DungeonFlows = dungeonFlowCatalog.ToList()
         };
+    }
+
+    private static List<string> ParseSpawnPositionGroups(string itemAssetContent)
+    {
+        var section = ExtractSection(itemAssetContent, "spawnPositionTypes:", "twoHanded:");
+        if (string.IsNullOrWhiteSpace(section))
+        {
+            return [];
+        }
+
+        var matches = Regex.Matches(
+            section,
+            "guid:\\s*([0-9a-f]{32})",
+            RegexOptions.IgnoreCase);
+        var groups = new List<string>();
+        foreach (Match match in matches)
+        {
+            groups.Add(match.Groups[1].Value);
+        }
+
+        return groups;
+    }
+
+    private static Dictionary<string, string> ParseItemGroupNames(string monoBehaviourPath)
+    {
+        var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var assetPath in Directory.GetFiles(monoBehaviourPath, "*.asset"))
+        {
+            var metaPath = assetPath + ".meta";
+            if (!File.Exists(metaPath))
+            {
+                continue;
+            }
+
+            var content = File.ReadAllText(assetPath);
+            if (!content.Contains("itemSpawnTypeName:", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            var guid = ExtractMetaGuid(metaPath);
+            if (string.IsNullOrWhiteSpace(guid))
+            {
+                continue;
+            }
+
+            var name = ExtractStringField(content, "itemSpawnTypeName");
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                name = Path.GetFileNameWithoutExtension(assetPath);
+            }
+
+            result[guid] = name;
+        }
+
+        return result;
+    }
+
+    private static Dictionary<string, string> ParseEnemyNames(string monoBehaviourPath)
+    {
+        var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var assetPath in Directory.GetFiles(monoBehaviourPath, "*.asset"))
+        {
+            var metaPath = assetPath + ".meta";
+            if (!File.Exists(metaPath))
+            {
+                continue;
+            }
+
+            var content = File.ReadAllText(assetPath);
+            if (!content.Contains("enemyName:", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            var guid = ExtractMetaGuid(metaPath);
+            if (string.IsNullOrWhiteSpace(guid))
+            {
+                continue;
+            }
+
+            var name = ExtractStringField(content, "enemyName");
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                continue;
+            }
+
+            result[guid] = name;
+        }
+
+        return result;
+    }
+
+    private static Dictionary<string, string> ParsePrefabNames(string sourceRootPath)
+    {
+        var gameObjectPath = Path.Combine(sourceRootPath, "Assets", "GameObject");
+        if (!Directory.Exists(gameObjectPath))
+        {
+            return new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var prefabPath in Directory.GetFiles(gameObjectPath, "*.prefab", SearchOption.AllDirectories))
+        {
+            var metaPath = prefabPath + ".meta";
+            if (!File.Exists(metaPath))
+            {
+                continue;
+            }
+
+            var guid = ExtractMetaGuid(metaPath);
+            if (string.IsNullOrWhiteSpace(guid))
+            {
+                continue;
+            }
+
+            result[guid] = Path.GetFileNameWithoutExtension(prefabPath);
+        }
+
+        return result;
+    }
+
+    private static List<DungeonFlowDefinition> ParseDungeonFlowCatalog(string sourceRootPath, string sampleScene, string monoBehaviourPath)
+    {
+        if (string.IsNullOrWhiteSpace(sampleScene))
+        {
+            return [];
+        }
+
+        var guidToMonoAssetPath = BuildGuidToAssetPathMap(monoBehaviourPath, "*.asset");
+        var gameObjectPath = Path.Combine(sourceRootPath, "Assets", "GameObject");
+        var guidToPrefabPath = BuildGuidToAssetPathMap(gameObjectPath, "*.prefab");
+        var spawnSyncedGuid = ParseGuidFromMeta(Path.Combine(sourceRootPath, "Assets", "Scripts", "Assembly-CSharp", "SpawnSyncedObject.cs.meta"));
+        var doorLockGuid = ParseGuidFromMeta(Path.Combine(sourceRootPath, "Assets", "Scripts", "Assembly-CSharp", "DoorLock.cs.meta"));
+        var apparatusPrefabGuid = ParseGuidFromMeta(Path.Combine(gameObjectPath, "LungApparatus.prefab.meta"));
+
+        var blockMatch = Regex.Match(
+            sampleScene,
+            "dungeonFlowTypes:\\s*(?<body>[\\s\\S]*?)\\s*dungeonGenerator:\\s*\\{",
+            RegexOptions.IgnoreCase);
+        if (!blockMatch.Success)
+        {
+            return [];
+        }
+
+        var body = blockMatch.Groups["body"].Value;
+        var flowMatches = Regex.Matches(
+            body,
+            "-\\s*dungeonFlow:\\s*\\{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{32}),\\s*type:\\s*2\\}",
+            RegexOptions.IgnoreCase);
+
+        var result = new List<DungeonFlowDefinition>();
+        var id = 0;
+        foreach (Match match in flowMatches)
+        {
+            var guid = match.Groups[1].Value;
+            var flowPath = guidToMonoAssetPath.TryGetValue(guid, out var p) ? p : null;
+            var flowContent = flowPath is not null && File.Exists(flowPath) ? File.ReadAllText(flowPath) : string.Empty;
+            var name = ExtractStringField(flowContent, "m_Name");
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                name = flowPath is not null ? Path.GetFileNameWithoutExtension(flowPath) : guid;
+            }
+
+            var tilePoolPrefabs = CollectFlowTilePoolPrefabs(flowContent, guidToMonoAssetPath);
+            var lockCount = 0;
+            var apparatusCount = 0;
+            foreach (var prefabGuid in tilePoolPrefabs)
+            {
+                if (!guidToPrefabPath.TryGetValue(prefabGuid, out var prefabPath))
+                {
+                    continue;
+                }
+
+                var prefabContent = File.ReadAllText(prefabPath);
+                lockCount += CountLockableDoorMarkers(prefabContent, doorLockGuid);
+                apparatusCount += CountApparatusMarkers(prefabContent, spawnSyncedGuid, apparatusPrefabGuid);
+            }
+
+            result.Add(new DungeonFlowDefinition
+            {
+                Id = id,
+                Name = name,
+                Theme = ClassifyDungeonFlowTheme(name),
+                EstimatedLockableDoorCount = lockCount,
+                EstimatedApparatusSpawnerCount = apparatusCount,
+                TilePoolPrefabCount = tilePoolPrefabs.Count
+            });
+            id++;
+        }
+
+        return result;
+    }
+
+    private static Dictionary<string, string> BuildGuidToAssetPathMap(string rootPath, string pattern)
+    {
+        var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        if (!Directory.Exists(rootPath))
+        {
+            return result;
+        }
+
+        foreach (var assetPath in Directory.GetFiles(rootPath, pattern, SearchOption.AllDirectories))
+        {
+            var guid = ExtractMetaGuid(assetPath + ".meta");
+            if (string.IsNullOrWhiteSpace(guid))
+            {
+                continue;
+            }
+
+            result[guid] = assetPath;
+        }
+
+        return result;
+    }
+
+    private static HashSet<string> CollectFlowTilePoolPrefabs(
+        string flowContent,
+        IReadOnlyDictionary<string, string> guidToMonoAssetPath)
+    {
+        var prefabGuids = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        if (string.IsNullOrWhiteSpace(flowContent))
+        {
+            return prefabGuids;
+        }
+
+        var tileSetGuids = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (Match match in Regex.Matches(
+                     flowContent,
+                     "DungeonArchetypes:\\s*(?:\\r?\\n\\s*-\\s*\\{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{32}),\\s*type:\\s*2\\})+",
+                     RegexOptions.IgnoreCase))
+        {
+            var block = match.Value;
+            foreach (Match guidMatch in Regex.Matches(block, "guid:\\s*([0-9a-f]{32})", RegexOptions.IgnoreCase))
+            {
+                var archetypeGuid = guidMatch.Groups[1].Value;
+                if (!guidToMonoAssetPath.TryGetValue(archetypeGuid, out var archetypePath))
+                {
+                    continue;
+                }
+
+                var archetypeContent = File.ReadAllText(archetypePath);
+                foreach (Match tileSetMatch in Regex.Matches(archetypeContent, "guid:\\s*([0-9a-f]{32})", RegexOptions.IgnoreCase))
+                {
+                    tileSetGuids.Add(tileSetMatch.Groups[1].Value);
+                }
+            }
+        }
+
+        foreach (Match nodeTileSetMatch in Regex.Matches(
+                     flowContent,
+                     "TileSets:\\s*(?:\\r?\\n\\s*-\\s*\\{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{32}),\\s*type:\\s*2\\})+",
+                     RegexOptions.IgnoreCase))
+        {
+            foreach (Match guidMatch in Regex.Matches(nodeTileSetMatch.Value, "guid:\\s*([0-9a-f]{32})", RegexOptions.IgnoreCase))
+            {
+                tileSetGuids.Add(guidMatch.Groups[1].Value);
+            }
+        }
+
+        foreach (var tileSetGuid in tileSetGuids)
+        {
+            if (!guidToMonoAssetPath.TryGetValue(tileSetGuid, out var tileSetPath))
+            {
+                continue;
+            }
+
+            var tileSetContent = File.ReadAllText(tileSetPath);
+            foreach (Match tileMatch in Regex.Matches(
+                         tileSetContent,
+                         "Value:\\s*\\{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{32}),\\s*type:\\s*2\\}",
+                         RegexOptions.IgnoreCase))
+            {
+                prefabGuids.Add(tileMatch.Groups[1].Value);
+            }
+        }
+
+        return prefabGuids;
+    }
+
+    private static int CountLockableDoorMarkers(string prefabContent, string? doorLockGuid)
+    {
+        if (string.IsNullOrWhiteSpace(doorLockGuid))
+        {
+            return 0;
+        }
+
+        var doorMatches = Regex.Matches(
+            prefabContent,
+            $"m_Script:\\s*\\{{fileID:\\s*11500000,\\s*guid:\\s*{Regex.Escape(doorLockGuid)},\\s*type:\\s*3\\}}[\\s\\S]*?canBeLocked:\\s*(\\d+)",
+            RegexOptions.IgnoreCase);
+        var count = 0;
+        foreach (Match match in doorMatches)
+        {
+            if (int.Parse(match.Groups[1].Value) == 1)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    private static int CountApparatusMarkers(string prefabContent, string? spawnSyncedGuid, string? apparatusPrefabGuid)
+    {
+        if (string.IsNullOrWhiteSpace(spawnSyncedGuid) || string.IsNullOrWhiteSpace(apparatusPrefabGuid))
+        {
+            return 0;
+        }
+
+        return Regex.Matches(
+            prefabContent,
+            $"m_Script:\\s*\\{{fileID:\\s*11500000,\\s*guid:\\s*{Regex.Escape(spawnSyncedGuid)},\\s*type:\\s*3\\}}[\\s\\S]*?spawnPrefab:\\s*\\{{fileID:\\s*1709254077376921,\\s*guid:\\s*{Regex.Escape(apparatusPrefabGuid)},\\s*type:\\s*2\\}}",
+            RegexOptions.IgnoreCase).Count;
+    }
+
+    private static string ClassifyDungeonFlowTheme(string flowName)
+    {
+        if (flowName.Contains("Level2Flow", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Mansion";
+        }
+
+        if (flowName.Contains("Level3Flow", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Mineshaft";
+        }
+
+        if (flowName.Contains("Level1Flow", StringComparison.OrdinalIgnoreCase))
+        {
+            return "Factory";
+        }
+
+        return "Unknown";
+    }
+
+    private static PlacementRules ParsePlacementRules(string sourceRootPath, IReadOnlyDictionary<string, string> itemGroupNames)
+    {
+        var gameObjectPath = Path.Combine(sourceRootPath, "Assets", "GameObject");
+        if (!Directory.Exists(gameObjectPath))
+        {
+            return new PlacementRules();
+        }
+
+        var randomScrapGuid = ParseGuidFromMeta(Path.Combine(sourceRootPath, "Assets", "Scripts", "Assembly-CSharp", "RandomScrapSpawn.cs.meta"));
+        var spawnSyncedGuid = ParseGuidFromMeta(Path.Combine(sourceRootPath, "Assets", "Scripts", "Assembly-CSharp", "SpawnSyncedObject.cs.meta"));
+        var doorLockGuid = ParseGuidFromMeta(Path.Combine(sourceRootPath, "Assets", "Scripts", "Assembly-CSharp", "DoorLock.cs.meta"));
+        var apparatusPrefabGuid = ParseGuidFromMeta(Path.Combine(gameObjectPath, "LungApparatus.prefab.meta"));
+
+        var totalRandomScrap = 0;
+        var groupCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        var estimatedLocks = 0;
+        var estimatedApparatusSpawners = 0;
+
+        foreach (var prefabPath in Directory.GetFiles(gameObjectPath, "*.prefab"))
+        {
+            var content = File.ReadAllText(prefabPath);
+
+            if (!string.IsNullOrWhiteSpace(randomScrapGuid))
+            {
+                var matches = Regex.Matches(
+                    content,
+                    $"m_Script:\\s*\\{{fileID:\\s*11500000,\\s*guid:\\s*{Regex.Escape(randomScrapGuid)},\\s*type:\\s*3\\}}[\\s\\S]*?spawnableItems:\\s*\\{{fileID:\\s*\\d+,\\s*guid:\\s*([0-9a-f]{{32}}),\\s*type:\\s*2\\}}",
+                    RegexOptions.IgnoreCase);
+                foreach (Match match in matches)
+                {
+                    totalRandomScrap++;
+                    var groupGuid = match.Groups[1].Value;
+                    groupCounts[groupGuid] = groupCounts.TryGetValue(groupGuid, out var c) ? c + 1 : 1;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(doorLockGuid))
+            {
+                var doorMatches = Regex.Matches(
+                    content,
+                    $"m_Script:\\s*\\{{fileID:\\s*11500000,\\s*guid:\\s*{Regex.Escape(doorLockGuid)},\\s*type:\\s*3\\}}[\\s\\S]*?canBeLocked:\\s*(\\d+)",
+                    RegexOptions.IgnoreCase);
+                foreach (Match match in doorMatches)
+                {
+                    if (int.Parse(match.Groups[1].Value) == 1)
+                    {
+                        estimatedLocks++;
+                    }
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(spawnSyncedGuid) && !string.IsNullOrWhiteSpace(apparatusPrefabGuid))
+            {
+                var apparatusMatches = Regex.Matches(
+                    content,
+                    $"m_Script:\\s*\\{{fileID:\\s*11500000,\\s*guid:\\s*{Regex.Escape(spawnSyncedGuid)},\\s*type:\\s*3\\}}[\\s\\S]*?spawnPrefab:\\s*\\{{fileID:\\s*1709254077376921,\\s*guid:\\s*{Regex.Escape(apparatusPrefabGuid)},\\s*type:\\s*2\\}}",
+                    RegexOptions.IgnoreCase);
+                estimatedApparatusSpawners += apparatusMatches.Count;
+            }
+        }
+
+        var capacities = groupCounts
+            .OrderByDescending(x => x.Value)
+            .Select(x => new SpawnGroupCapacityRule
+            {
+                GroupId = x.Key,
+                GroupName = itemGroupNames.TryGetValue(x.Key, out var name) ? name : x.Key,
+                Count = x.Value
+            })
+            .ToList();
+
+        return new PlacementRules
+        {
+            TotalRandomScrapSpawnPoints = totalRandomScrap,
+            EstimatedLockableDoorCount = estimatedLocks,
+            EstimatedApparatusSpawnerCount = estimatedApparatusSpawners,
+            SpawnGroupCapacities = capacities
+        };
+    }
+
+    private static string? ParseGuidFromMeta(string metaPath)
+    {
+        if (!File.Exists(metaPath))
+        {
+            return null;
+        }
+
+        var match = Regex.Match(File.ReadAllText(metaPath), "^guid:\\s*([0-9a-f]{32})", RegexOptions.Multiline | RegexOptions.IgnoreCase);
+        return match.Success ? match.Groups[1].Value : null;
     }
 
     private static SceneRoundManagerSettings ParseSceneRoundManagerSettings(string sampleScene)
@@ -479,5 +939,16 @@ public sealed class CurrentDumpExtractorAdapter : IRuleExtractorAdapter
         public int? MinEnemiesToSpawn { get; init; }
 
         public int? MinOutsideEnemiesToSpawn { get; init; }
+    }
+
+    private sealed class PlacementRules
+    {
+        public int TotalRandomScrapSpawnPoints { get; init; }
+
+        public int EstimatedLockableDoorCount { get; init; }
+
+        public int EstimatedApparatusSpawnerCount { get; init; }
+
+        public List<SpawnGroupCapacityRule> SpawnGroupCapacities { get; init; } = [];
     }
 }

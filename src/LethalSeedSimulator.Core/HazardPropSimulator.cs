@@ -19,7 +19,7 @@ public sealed class HazardPropSimulator
                 : mapObjectsRandom.Next(0, mapObject.MaxObjectsEstimate + 1);
             mapObjects.Add(new MapObjectSpawn
             {
-                ObjectId = mapObject.Id,
+                ObjectName = mapObject.Name,
                 Count = count
             });
         }
