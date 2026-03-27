@@ -16,8 +16,7 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
-        var repoRoot = ResolveRepoRoot();
-        var rulesRoot = Path.Combine(repoRoot, "LethalSeedSimulator", "rules");
+        var rulesRoot = ResolveRulesRoot();
         services = new GuiServices(rulesRoot);
         txtGlobalInfo.Text = $"Rules: {rulesRoot}";
         SetExportButtonsIdle(true);
@@ -136,7 +135,7 @@ public partial class Form1 : Form
         try
         {
             btnExtractRules.Enabled = false;
-            var repoRoot = ResolveRepoRoot();
+            var repoRoot = ResolveSourceRootWithPrompt();
             await Task.Run(() => services.ExtractRulePack("decompiled-current", repoRoot));
             txtGlobalInfo.Text = $"Rulepack refreshed at {DateTime.Now:t} | Rules: {services.RulesRoot}";
             TryShowMoonHints();
@@ -160,10 +159,11 @@ public partial class Form1 : Form
 
     private static string ResolveRepoRoot()
     {
-        var current = new DirectoryInfo(AppContext.BaseDirectory);
+        var current = new DirectoryInfo(Directory.GetCurrentDirectory());
         while (current is not null)
         {
-            if (Directory.Exists(Path.Combine(current.FullName, "Assembly-CSharp")))
+            if (Directory.Exists(Path.Combine(current.FullName, "Assembly-CSharp")) &&
+                Directory.Exists(Path.Combine(current.FullName, "Assets", "MonoBehaviour")))
             {
                 return current.FullName;
             }
@@ -172,6 +172,64 @@ public partial class Form1 : Form
         }
 
         throw new InvalidOperationException("Could not resolve repository root.");
+    }
+
+    private static string ResolveRulesRoot()
+    {
+        var fromEnv = Environment.GetEnvironmentVariable("LETHAL_SIM_RULES_ROOT");
+        if (!string.IsNullOrWhiteSpace(fromEnv))
+        {
+            return fromEnv;
+        }
+
+        var cwdRules = Path.Combine(Directory.GetCurrentDirectory(), "rules");
+        if (Directory.Exists(cwdRules))
+        {
+            return cwdRules;
+        }
+
+        var nestedRules = Path.Combine(Directory.GetCurrentDirectory(), "LethalSeedSimulator", "rules");
+        if (Directory.Exists(nestedRules))
+        {
+            return nestedRules;
+        }
+
+        return cwdRules;
+    }
+
+    private string ResolveSourceRootWithPrompt()
+    {
+        var fromEnv = Environment.GetEnvironmentVariable("LETHAL_SIM_SOURCE_ROOT");
+        if (!string.IsNullOrWhiteSpace(fromEnv) &&
+            Directory.Exists(Path.Combine(fromEnv, "Assembly-CSharp")) &&
+            Directory.Exists(Path.Combine(fromEnv, "Assets", "MonoBehaviour")))
+        {
+            return fromEnv;
+        }
+
+        try
+        {
+            return ResolveRepoRoot();
+        }
+        catch
+        {
+        }
+
+        using var dialog = new FolderBrowserDialog
+        {
+            Description = "Select folder containing Assembly-CSharp and Assets/MonoBehaviour",
+            UseDescriptionForTitle = true
+        };
+
+        if (dialog.ShowDialog(this) == DialogResult.OK &&
+            Directory.Exists(Path.Combine(dialog.SelectedPath, "Assembly-CSharp")) &&
+            Directory.Exists(Path.Combine(dialog.SelectedPath, "Assets", "MonoBehaviour")))
+        {
+            return dialog.SelectedPath;
+        }
+
+        throw new InvalidOperationException(
+            "Source root not selected. Set LETHAL_SIM_SOURCE_ROOT or choose a valid folder.");
     }
 
     private void TryShowMoonHints()

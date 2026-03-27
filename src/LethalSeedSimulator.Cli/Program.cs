@@ -4,9 +4,6 @@ using LethalSeedSimulator.Extractor;
 using LethalSeedSimulator.Rules;
 
 var registry = new RuleExtractorRegistry([new CurrentDumpExtractorAdapter()]);
-var repoRoot = ResolveRepoRoot();
-var rulesRoot = Path.Combine(repoRoot, "LethalSeedSimulator", "rules");
-var provider = new JsonVersionRuleProvider(rulesRoot);
 var simulator = new SeedSimulator();
 
 if (args.Length == 0)
@@ -19,26 +16,29 @@ try
 {
     var command = args[0].ToLowerInvariant();
     var options = ParseOptions(args.Skip(1).ToArray());
+    var rulesRoot = ResolveRulesRoot(options);
+    var sourceRoot = ResolveSourceRoot(options);
+    var provider = new JsonVersionRuleProvider(rulesRoot);
 
     switch (command)
     {
         case "extract":
-            RunExtract(options);
+            RunExtract(options, sourceRoot, rulesRoot);
             break;
         case "inspect":
-            RunInspect(options);
+            RunInspect(options, provider);
             break;
         case "search":
-            RunSearch(options);
+            RunSearch(options, provider);
             break;
         case "validate":
-            RunValidate(options);
+            RunValidate(options, provider);
             break;
         case "export-all":
-            RunExportAll(options);
+            RunExportAll(options, provider);
             break;
         case "versions":
-            RunVersions();
+            RunVersions(provider);
             break;
         default:
             throw new InvalidOperationException($"Unknown command '{command}'.");
@@ -52,11 +52,10 @@ catch (Exception ex)
 
 return 0;
 
-void RunExtract(Dictionary<string, string> options)
+void RunExtract(Dictionary<string, string> options, string sourceRoot, string rulesRoot)
 {
     var version = Get(options, "version", CurrentDumpExtractorAdapter.AdapterVersion);
     var adapter = registry.Resolve(version);
-    var sourceRoot = Get(options, "source-root", repoRoot);
     var outputRoot = Get(options, "rules-root", rulesRoot);
 
     var pack = adapter.Extract(sourceRoot);
@@ -68,7 +67,7 @@ void RunExtract(Dictionary<string, string> options)
     Console.WriteLine($"Wrote rule pack: {Path.Combine(outputDir, "rulepack.json")}");
 }
 
-void RunInspect(Dictionary<string, string> options)
+void RunInspect(Dictionary<string, string> options, JsonVersionRuleProvider provider)
 {
     var version = Require(options, "version");
     var level = Get(options, "moon", "0");
@@ -79,7 +78,7 @@ void RunInspect(Dictionary<string, string> options)
     Console.WriteLine(JsonSerializer.Serialize(report, JsonOptions()));
 }
 
-void RunSearch(Dictionary<string, string> options)
+void RunSearch(Dictionary<string, string> options, JsonVersionRuleProvider provider)
 {
     var version = Require(options, "version");
     var level = Get(options, "moon", "0");
@@ -134,7 +133,7 @@ void RunSearch(Dictionary<string, string> options)
     Console.WriteLine($"Matches: {hits.Count}");
 }
 
-void RunValidate(Dictionary<string, string> options)
+void RunValidate(Dictionary<string, string> options, JsonVersionRuleProvider provider)
 {
     var version = Require(options, "version");
     var level = Get(options, "moon", "0");
@@ -154,7 +153,7 @@ void RunValidate(Dictionary<string, string> options)
     Console.WriteLine("Validation passed.");
 }
 
-void RunVersions()
+void RunVersions(JsonVersionRuleProvider provider)
 {
     Console.WriteLine("Extractor adapters:");
     foreach (var version in registry.ListVersions())
@@ -169,7 +168,7 @@ void RunVersions()
     }
 }
 
-void RunExportAll(Dictionary<string, string> options)
+void RunExportAll(Dictionary<string, string> options, JsonVersionRuleProvider provider)
 {
     var version = Require(options, "version");
     var levelId = Get(options, "moon", "0");
@@ -178,7 +177,7 @@ void RunExportAll(Dictionary<string, string> options)
     var output = Get(
         options,
         "output",
-        Path.Combine(repoRoot, "LethalSeedSimulator", "exports", $"{version}_{levelId}_{seedStart}_{seedEnd}.csv"));
+        Path.Combine(ResolveExportRoot(options), $"{version}_{levelId}_{seedStart}_{seedEnd}.csv"));
 
     var reportInterval = int.Parse(Get(options, "report-interval", "1000000"));
     var includeRolls = Get(options, "include-rolls-json", "false").Equals("true", StringComparison.OrdinalIgnoreCase);
@@ -190,6 +189,7 @@ void RunExportAll(Dictionary<string, string> options)
 
     var pack = provider.Load(version);
     var level = pack.Levels.FirstOrDefault(x => string.Equals(x.Id, levelId, StringComparison.OrdinalIgnoreCase))
+        ?? pack.Levels.FirstOrDefault(x => string.Equals(x.Name, levelId, StringComparison.OrdinalIgnoreCase))
         ?? throw new InvalidOperationException($"Unknown level id '{levelId}'.");
 
     var allItemIds = level.SpawnableScrap
@@ -291,12 +291,52 @@ static IEnumerable<(int start, int end)> Partitioner(int start, int end)
     }
 }
 
-static string ResolveRepoRoot()
+static string ResolveRulesRoot(IReadOnlyDictionary<string, string> options)
 {
-    var current = new DirectoryInfo(AppContext.BaseDirectory);
+    if (options.TryGetValue("rules-root", out var fromOption) && !string.IsNullOrWhiteSpace(fromOption))
+    {
+        return fromOption;
+    }
+
+    var fromEnv = Environment.GetEnvironmentVariable("LETHAL_SIM_RULES_ROOT");
+    if (!string.IsNullOrWhiteSpace(fromEnv))
+    {
+        return fromEnv;
+    }
+
+    var cwdRules = Path.Combine(Directory.GetCurrentDirectory(), "rules");
+    if (Directory.Exists(cwdRules))
+    {
+        return cwdRules;
+    }
+
+    var nestedRules = Path.Combine(Directory.GetCurrentDirectory(), "LethalSeedSimulator", "rules");
+    if (Directory.Exists(nestedRules))
+    {
+        return nestedRules;
+    }
+
+    return cwdRules;
+}
+
+static string ResolveSourceRoot(IReadOnlyDictionary<string, string> options)
+{
+    if (options.TryGetValue("source-root", out var fromOption) && !string.IsNullOrWhiteSpace(fromOption))
+    {
+        return fromOption;
+    }
+
+    var fromEnv = Environment.GetEnvironmentVariable("LETHAL_SIM_SOURCE_ROOT");
+    if (!string.IsNullOrWhiteSpace(fromEnv))
+    {
+        return fromEnv;
+    }
+
+    var current = new DirectoryInfo(Directory.GetCurrentDirectory());
     while (current is not null)
     {
-        if (Directory.Exists(Path.Combine(current.FullName, "Assembly-CSharp")))
+        if (Directory.Exists(Path.Combine(current.FullName, "Assembly-CSharp")) &&
+            Directory.Exists(Path.Combine(current.FullName, "Assets", "MonoBehaviour")))
         {
             return current.FullName;
         }
@@ -304,7 +344,20 @@ static string ResolveRepoRoot()
         current = current.Parent;
     }
 
-    throw new InvalidOperationException("Could not resolve repository root.");
+    throw new InvalidOperationException(
+        "Could not resolve source root. Pass --source-root or set LETHAL_SIM_SOURCE_ROOT.");
+}
+
+static string ResolveExportRoot(IReadOnlyDictionary<string, string> options)
+{
+    if (options.TryGetValue("export-root", out var fromOption) && !string.IsNullOrWhiteSpace(fromOption))
+    {
+        return fromOption;
+    }
+
+    var cwd = Directory.GetCurrentDirectory();
+    var defaultDir = Path.Combine(cwd, "exports");
+    return defaultDir;
 }
 
 static JsonSerializerOptions JsonOptions() => new()
@@ -330,10 +383,10 @@ static void PrintHelp()
     Console.WriteLine("Lethal Seed Simulator");
     Console.WriteLine("Commands:");
     Console.WriteLine("  extract --version <key> [--source-root <path>] [--rules-root <path>]");
-    Console.WriteLine("  inspect --version <key> --seed <n> [--moon <id>]");
-    Console.WriteLine("  search --version <key> --seed-start <a> --seed-end <b> [--moon <id>] [--query <expr>] [--threads <n>] [--jsonl true]");
-    Console.WriteLine("  validate --version <key> [--moon <id>] [--seed <n>]");
-    Console.WriteLine("  export-all --version <key> [--moon <id>] [--seed-start <n>] [--seed-end <n>] [--output <csv>] [--report-interval <n>] [--include-rolls-json true]");
+    Console.WriteLine("  inspect --version <key> --seed <n> [--moon <idOrName>] [--rules-root <path>]");
+    Console.WriteLine("  search --version <key> --seed-start <a> --seed-end <b> [--moon <idOrName>] [--query <expr>] [--threads <n>] [--jsonl true] [--rules-root <path>]");
+    Console.WriteLine("  validate --version <key> [--moon <idOrName>] [--seed <n>] [--rules-root <path>]");
+    Console.WriteLine("  export-all --version <key> [--moon <idOrName>] [--seed-start <n>] [--seed-end <n>] [--output <csv>] [--export-root <path>] [--report-interval <n>] [--include-rolls-json true] [--rules-root <path>]");
     Console.WriteLine("  versions");
 }
 
