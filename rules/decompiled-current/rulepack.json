@@ -1,0 +1,3488 @@
+{
+  "Metadata": {
+    "RuleSetVersion": "decompiled-current",
+    "GameVersionLabel": "decompiled-dump",
+    "SourceSignature": "06B3B8293216EE2E59559DECA4DDC74984CBC4BF5FC352BD860A54B4053203E0",
+    "ExtractedAtUtc": "2026-03-26T16:56:57.0695496+00:00"
+  },
+  "Offsets": {
+    "LevelRandom": 0,
+    "AnomalyRandom": 5,
+    "EnemySpawnRandom": 40,
+    "OutsideEnemySpawnRandom": 41,
+    "BreakerBoxRandom": 20,
+    "ScrapValuesRandom": 210,
+    "SpawnMapObjectsRandom": 587,
+    "WeatherRandom": 35
+  },
+  "Levels": [
+    {
+      "Id": "0",
+      "Name": "41 Experimentation",
+      "MinScrap": 8,
+      "MaxScrapExclusive": 12,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 80,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 90,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 12,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 701558109,
+          "ItemName": "Metal sheet",
+          "Rarity": 88,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 4,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 80,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 19,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1974712455,
+          "ItemName": "Ring",
+          "Rarity": 3,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 105377271,
+          "ItemName": "Steering wheel",
+          "Rarity": 32,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 637089745,
+          "ItemName": "Cookie mold pan",
+          "Rarity": 5,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 720102474,
+          "ItemName": "Egg beater",
+          "Rarity": 10,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 10,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 633198166,
+          "ItemName": "Dust pan",
+          "Rarity": 32,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 3,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 3,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 531283125,
+          "ItemName": "Cash register",
+          "Rarity": 3,
+          "MinValueInclusive": 200,
+          "MaxValueExclusive": 401,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1103580240,
+          "ItemName": "Candy",
+          "Rarity": 2,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 152767,
+          "ItemName": "Gold bar",
+          "Rarity": 1,
+          "MinValueInclusive": 255,
+          "MaxValueExclusive": 526,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1774772929,
+          "ItemName": "Yield sign",
+          "Rarity": 6,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 22,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 17,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1918699375,
+          "ItemName": "Flask",
+          "Rarity": 42,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 5,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Rainy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "1",
+      "Name": "220 Assurance",
+      "MinScrap": 13,
+      "MaxScrapExclusive": 16,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 30,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 40,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 10,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 701558109,
+          "ItemName": "Metal sheet",
+          "Rarity": 23,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 59,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 31,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 8,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 58,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 646764934,
+          "ItemName": "Remote",
+          "Rarity": 13,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 637089745,
+          "ItemName": "Cookie mold pan",
+          "Rarity": 49,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 6,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 17,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1393385808,
+          "ItemName": "Stop sign",
+          "Rarity": 34,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 32,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 20,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1495750731,
+          "ItemName": "Mug",
+          "Rarity": 12,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 171,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 12,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 105377271,
+          "ItemName": "Steering wheel",
+          "Rarity": 19,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 7,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1946320473,
+          "ItemName": "Hairdryer",
+          "Rarity": 4,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 720102474,
+          "ItemName": "Egg beater",
+          "Rarity": 34,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 960770791,
+          "ItemName": "Brush",
+          "Rarity": 26,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 53,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 11311458,
+          "ItemName": "Bell",
+          "Rarity": 16,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 10,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 10,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 531283125,
+          "ItemName": "Cash register",
+          "Rarity": 3,
+          "MinValueInclusive": 200,
+          "MaxValueExclusive": 401,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1774772929,
+          "ItemName": "Yield sign",
+          "Rarity": 17,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 14,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 13,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1918699375,
+          "ItemName": "Flask",
+          "Rarity": 12,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1979021990,
+          "ItemName": "Whoopie cushion",
+          "Rarity": 11,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 282248098,
+          "ItemName": "Comedy",
+          "Rarity": 5,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 930571994,
+          "ItemName": "Tragedy",
+          "Rarity": 3,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 32,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 19,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 986753552,
+          "ItemName": "Control pad",
+          "Rarity": 15,
+          "MinValueInclusive": 85,
+          "MaxValueExclusive": 161,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 2053029093,
+          "ItemName": "Plastic cup",
+          "Rarity": 19,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1057561792,
+          "ItemName": "Garbage lid",
+          "Rarity": 31,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 111,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1750501098,
+          "ItemName": "Soccer ball",
+          "Rarity": 23,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 181,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 105217076,
+          "ItemName": "Zed Dog",
+          "Rarity": 1,
+          "MinValueInclusive": 1,
+          "MaxValueExclusive": 501,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Rainy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "2",
+      "Name": "56 Vow",
+      "MinScrap": 12,
+      "MaxScrapExclusive": 15,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 25,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 25,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 30,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 701558109,
+          "ItemName": "Metal sheet",
+          "Rarity": 16,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 31,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 17,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 8,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 30,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 646764934,
+          "ItemName": "Remote",
+          "Rarity": 19,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 637089745,
+          "ItemName": "Cookie mold pan",
+          "Rarity": 49,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 6,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 21,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1393385808,
+          "ItemName": "Stop sign",
+          "Rarity": 40,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 40,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 27,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1495750731,
+          "ItemName": "Mug",
+          "Rarity": 18,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 171,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 12,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 105377271,
+          "ItemName": "Steering wheel",
+          "Rarity": 17,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 7,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 2044362862,
+          "ItemName": "Rubber Ducky",
+          "Rarity": 24,
+          "MinValueInclusive": 5,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 720102474,
+          "ItemName": "Egg beater",
+          "Rarity": 56,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 960770791,
+          "ItemName": "Brush",
+          "Rarity": 46,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 24,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 11311458,
+          "ItemName": "Bell",
+          "Rarity": 33,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 868974745,
+          "ItemName": "Chemical jug",
+          "Rarity": 46,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 211,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 10,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 35,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 531283125,
+          "ItemName": "Cash register",
+          "Rarity": 5,
+          "MinValueInclusive": 200,
+          "MaxValueExclusive": 401,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1774772929,
+          "ItemName": "Yield sign",
+          "Rarity": 16,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 14,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 12,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1918699375,
+          "ItemName": "Flask",
+          "Rarity": 30,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1979021990,
+          "ItemName": "Whoopie cushion",
+          "Rarity": 38,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 28,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 34,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1057561792,
+          "ItemName": "Garbage lid",
+          "Rarity": 27,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 111,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 986753552,
+          "ItemName": "Control pad",
+          "Rarity": 12,
+          "MinValueInclusive": 85,
+          "MaxValueExclusive": 161,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 2053029093,
+          "ItemName": "Plastic cup",
+          "Rarity": 22,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1750501098,
+          "ItemName": "Soccer ball",
+          "Rarity": 22,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 181,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 105217076,
+          "ItemName": "Zed Dog",
+          "Rarity": 1,
+          "MinValueInclusive": 1,
+          "MaxValueExclusive": 501,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "4",
+      "Name": "61 March",
+      "MinScrap": 13,
+      "MaxScrapExclusive": 17,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 77,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 72,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 28,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 701558109,
+          "ItemName": "Metal sheet",
+          "Rarity": 83,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 89,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 18,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 3,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 67,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 646764934,
+          "ItemName": "Remote",
+          "Rarity": 16,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 637089745,
+          "ItemName": "Cookie mold pan",
+          "Rarity": 24,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 2,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 4,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1393385808,
+          "ItemName": "Stop sign",
+          "Rarity": 29,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 24,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 152767,
+          "ItemName": "Gold bar",
+          "Rarity": 4,
+          "MinValueInclusive": 255,
+          "MaxValueExclusive": 526,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 531283125,
+          "ItemName": "Cash register",
+          "Rarity": 3,
+          "MinValueInclusive": 200,
+          "MaxValueExclusive": 401,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 43,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 34,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1103580240,
+          "ItemName": "Candy",
+          "Rarity": 3,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 2,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1774772929,
+          "ItemName": "Yield sign",
+          "Rarity": 8,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 24,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1918699375,
+          "ItemName": "Flask",
+          "Rarity": 42,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 65,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1057561792,
+          "ItemName": "Garbage lid",
+          "Rarity": 20,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 111,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 986753552,
+          "ItemName": "Control pad",
+          "Rarity": 11,
+          "MinValueInclusive": 85,
+          "MaxValueExclusive": 161,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 2053029093,
+          "ItemName": "Plastic cup",
+          "Rarity": 27,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 32,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1750501098,
+          "ItemName": "Soccer ball",
+          "Rarity": 21,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 181,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 105217076,
+          "ItemName": "Zed Dog",
+          "Rarity": 1,
+          "MinValueInclusive": 1,
+          "MaxValueExclusive": 501,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "5",
+      "Name": "20 Adamance",
+      "MinScrap": 16,
+      "MaxScrapExclusive": 19,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 30,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 40,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 32,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 701558109,
+          "ItemName": "Metal sheet",
+          "Rarity": 16,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 31,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 17,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 8,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 44,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 646764934,
+          "ItemName": "Remote",
+          "Rarity": 24,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 637089745,
+          "ItemName": "Cookie mold pan",
+          "Rarity": 40,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 9,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 21,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1393385808,
+          "ItemName": "Stop sign",
+          "Rarity": 40,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 32,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 20,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1495750731,
+          "ItemName": "Mug",
+          "Rarity": 12,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 171,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 12,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 105377271,
+          "ItemName": "Steering wheel",
+          "Rarity": 12,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 4,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 2044362862,
+          "ItemName": "Rubber Ducky",
+          "Rarity": 25,
+          "MinValueInclusive": 5,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 720102474,
+          "ItemName": "Egg beater",
+          "Rarity": 50,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 960770791,
+          "ItemName": "Brush",
+          "Rarity": 46,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 24,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 11311458,
+          "ItemName": "Bell",
+          "Rarity": 37,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 868974745,
+          "ItemName": "Chemical jug",
+          "Rarity": 41,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 211,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 13,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 9,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 531283125,
+          "ItemName": "Cash register",
+          "Rarity": 7,
+          "MinValueInclusive": 200,
+          "MaxValueExclusive": 401,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1774772929,
+          "ItemName": "Yield sign",
+          "Rarity": 16,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 21,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 23,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1918699375,
+          "ItemName": "Flask",
+          "Rarity": 30,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1979021990,
+          "ItemName": "Whoopie cushion",
+          "Rarity": 20,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 50,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 40,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 2053029093,
+          "ItemName": "Plastic cup",
+          "Rarity": 16,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1057561792,
+          "ItemName": "Garbage lid",
+          "Rarity": 19,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 111,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 986753552,
+          "ItemName": "Control pad",
+          "Rarity": 16,
+          "MinValueInclusive": 85,
+          "MaxValueExclusive": 161,
+          "TwoHanded": true
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Rainy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "6",
+      "Name": "85 Rend",
+      "MinScrap": 18,
+      "MaxScrapExclusive": 26,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 2,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 2,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 16,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 4,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1673206933,
+          "ItemName": "Fancy lamp",
+          "Rarity": 49,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 321,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 33,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 4,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 5,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1768180206,
+          "ItemName": "Golden cup",
+          "Rarity": 24,
+          "MinValueInclusive": 100,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 942725122,
+          "ItemName": "Painting",
+          "Rarity": 56,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 311,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 11311458,
+          "ItemName": "Bell",
+          "Rarity": 48,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1974712455,
+          "ItemName": "Ring",
+          "Rarity": 19,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 46,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1092750697,
+          "ItemName": "Toothpaste",
+          "Rarity": 24,
+          "MinValueInclusive": 35,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 960770791,
+          "ItemName": "Brush",
+          "Rarity": 25,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 725027776,
+          "ItemName": "Pill bottle",
+          "Rarity": 4,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1371745396,
+          "ItemName": "Perfume bottle",
+          "Rarity": 28,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 261,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1495750731,
+          "ItemName": "Mug",
+          "Rarity": 44,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 171,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 46,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 35,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1946320473,
+          "ItemName": "Hairdryer",
+          "Rarity": 43,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 17,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 26,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1046283282,
+          "ItemName": "Teeth",
+          "Rarity": 31,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1680385413,
+          "ItemName": "Magic 7 ball",
+          "Rarity": 23,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 2044362862,
+          "ItemName": "Rubber Ducky",
+          "Rarity": 16,
+          "MinValueInclusive": 5,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 25,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 531283125,
+          "ItemName": "Cash register",
+          "Rarity": 16,
+          "MinValueInclusive": 200,
+          "MaxValueExclusive": 401,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 8,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 8,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1103580240,
+          "ItemName": "Candy",
+          "Rarity": 14,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 19,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 282248098,
+          "ItemName": "Comedy",
+          "Rarity": 53,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 930571994,
+          "ItemName": "Tragedy",
+          "Rarity": 25,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 57,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 986753552,
+          "ItemName": "Control pad",
+          "Rarity": 33,
+          "MinValueInclusive": 85,
+          "MaxValueExclusive": 161,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1057561792,
+          "ItemName": "Garbage lid",
+          "Rarity": 7,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 111,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 13,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 2053029093,
+          "ItemName": "Plastic cup",
+          "Rarity": 29,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1750501098,
+          "ItemName": "Soccer ball",
+          "Rarity": 28,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 181,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 346690810,
+          "ItemName": "Toy train",
+          "Rarity": 35,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1575557190,
+          "ItemName": "Clock",
+          "Rarity": 35,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 105217076,
+          "ItemName": "Zed Dog",
+          "Rarity": 2,
+          "MinValueInclusive": 1,
+          "MaxValueExclusive": 501,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "7",
+      "Name": "7 Dine",
+      "MinScrap": 200,
+      "MaxScrapExclusive": 250,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 1979021990,
+          "ItemName": "Whoopie cushion",
+          "Rarity": 1,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 1,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 564435065,
+          "ItemName": "Hand",
+          "Rarity": 100,
+          "MinValueInclusive": 10,
+          "MaxValueExclusive": 31,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1358882956,
+          "ItemName": "Bone",
+          "Rarity": 79,
+          "MinValueInclusive": 17,
+          "MaxValueExclusive": 38,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 890072157,
+          "ItemName": "Ribcage",
+          "Rarity": 79,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 66,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 911124433,
+          "ItemName": "Ear",
+          "Rarity": 41,
+          "MinValueInclusive": 7,
+          "MaxValueExclusive": 36,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1030688103,
+          "ItemName": "Foot",
+          "Rarity": 100,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1234559404,
+          "ItemName": "Knee",
+          "Rarity": 55,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 46,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1635908658,
+          "ItemName": "Heart",
+          "Rarity": 6,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 251,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1171033371,
+          "ItemName": "Tongue",
+          "Rarity": 32,
+          "MinValueInclusive": 8,
+          "MaxValueExclusive": 41,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Rainy",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "8",
+      "Name": "21 Offense",
+      "MinScrap": 14,
+      "MaxScrapExclusive": 18,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 94,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 80,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 28,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 701558109,
+          "ItemName": "Metal sheet",
+          "Rarity": 65,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 89,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 18,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 10,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 46,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 646764934,
+          "ItemName": "Remote",
+          "Rarity": 15,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 637089745,
+          "ItemName": "Cookie mold pan",
+          "Rarity": 6,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 9,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 20,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1393385808,
+          "ItemName": "Stop sign",
+          "Rarity": 27,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 24,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1046283282,
+          "ItemName": "Teeth",
+          "Rarity": 11,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 8,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 15,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 18,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1774772929,
+          "ItemName": "Yield sign",
+          "Rarity": 28,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 13,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 19,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 19,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 282248098,
+          "ItemName": "Comedy",
+          "Rarity": 10,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1918699375,
+          "ItemName": "Flask",
+          "Rarity": 40,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 986753552,
+          "ItemName": "Control pad",
+          "Rarity": 40,
+          "MinValueInclusive": 85,
+          "MaxValueExclusive": 161,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 18,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 2053029093,
+          "ItemName": "Plastic cup",
+          "Rarity": 19,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1057561792,
+          "ItemName": "Garbage lid",
+          "Rarity": 31,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 111,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1575557190,
+          "ItemName": "Clock",
+          "Rarity": 6,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 346690810,
+          "ItemName": "Toy train",
+          "Rarity": 6,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 105217076,
+          "ItemName": "Zed Dog",
+          "Rarity": 1,
+          "MinValueInclusive": 1,
+          "MaxValueExclusive": 501,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Rainy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "9",
+      "Name": "8 Titan",
+      "MinScrap": 28,
+      "MaxScrapExclusive": 32,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 37,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 40,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 16,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 47,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1673206933,
+          "ItemName": "Fancy lamp",
+          "Rarity": 27,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 321,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 20,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 8,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 10,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1768180206,
+          "ItemName": "Golden cup",
+          "Rarity": 27,
+          "MinValueInclusive": 100,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 942725122,
+          "ItemName": "Painting",
+          "Rarity": 34,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 311,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 11311458,
+          "ItemName": "Bell",
+          "Rarity": 37,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1974712455,
+          "ItemName": "Ring",
+          "Rarity": 27,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 35,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1092750697,
+          "ItemName": "Toothpaste",
+          "Rarity": 36,
+          "MinValueInclusive": 35,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 960770791,
+          "ItemName": "Brush",
+          "Rarity": 31,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 725027776,
+          "ItemName": "Pill bottle",
+          "Rarity": 15,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1371745396,
+          "ItemName": "Perfume bottle",
+          "Rarity": 14,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 261,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1495750731,
+          "ItemName": "Mug",
+          "Rarity": 21,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 171,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 33,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 25,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1946320473,
+          "ItemName": "Hairdryer",
+          "Rarity": 30,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 22,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 38,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1046283282,
+          "ItemName": "Teeth",
+          "Rarity": 21,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1680385413,
+          "ItemName": "Magic 7 ball",
+          "Rarity": 16,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 2044362862,
+          "ItemName": "Rubber Ducky",
+          "Rarity": 24,
+          "MinValueInclusive": 5,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 30,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 24,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 16,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 9,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 17,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 930571994,
+          "ItemName": "Tragedy",
+          "Rarity": 46,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 282248098,
+          "ItemName": "Comedy",
+          "Rarity": 43,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1979021990,
+          "ItemName": "Whoopie cushion",
+          "Rarity": 26,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 2053029093,
+          "ItemName": "Plastic cup",
+          "Rarity": 19,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 8,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "10",
+      "Name": "68 Artifice",
+      "MinScrap": 26,
+      "MaxScrapExclusive": 31,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 31,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 30,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 16,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 26,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1673206933,
+          "ItemName": "Fancy lamp",
+          "Rarity": 53,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 321,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 20,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 33,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 10,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1768180206,
+          "ItemName": "Golden cup",
+          "Rarity": 55,
+          "MinValueInclusive": 100,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 942725122,
+          "ItemName": "Painting",
+          "Rarity": 62,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 311,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 11311458,
+          "ItemName": "Bell",
+          "Rarity": 56,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1974712455,
+          "ItemName": "Ring",
+          "Rarity": 42,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 64,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1092750697,
+          "ItemName": "Toothpaste",
+          "Rarity": 42,
+          "MinValueInclusive": 35,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 960770791,
+          "ItemName": "Brush",
+          "Rarity": 16,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 725027776,
+          "ItemName": "Pill bottle",
+          "Rarity": 15,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1371745396,
+          "ItemName": "Perfume bottle",
+          "Rarity": 14,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 261,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1495750731,
+          "ItemName": "Mug",
+          "Rarity": 10,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 171,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 16,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 42,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1946320473,
+          "ItemName": "Hairdryer",
+          "Rarity": 55,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 25,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 20,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1046283282,
+          "ItemName": "Teeth",
+          "Rarity": 27,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1680385413,
+          "ItemName": "Magic 7 ball",
+          "Rarity": 30,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 2044362862,
+          "ItemName": "Rubber Ducky",
+          "Rarity": 60,
+          "MinValueInclusive": 5,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 30,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 39,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 31,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 13,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 15,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 930571994,
+          "ItemName": "Tragedy",
+          "Rarity": 53,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 282248098,
+          "ItemName": "Comedy",
+          "Rarity": 51,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1979021990,
+          "ItemName": "Whoopie cushion",
+          "Rarity": 43,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 152767,
+          "ItemName": "Gold bar",
+          "Rarity": 32,
+          "MinValueInclusive": 255,
+          "MaxValueExclusive": 526,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 531283125,
+          "ItemName": "Cash register",
+          "Rarity": 26,
+          "MinValueInclusive": 200,
+          "MaxValueExclusive": 401,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 19,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1750501098,
+          "ItemName": "Soccer ball",
+          "Rarity": 39,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 181,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 20,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1057561792,
+          "ItemName": "Garbage lid",
+          "Rarity": 11,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 111,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 346690810,
+          "ItemName": "Toy train",
+          "Rarity": 22,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1575557190,
+          "ItemName": "Clock",
+          "Rarity": 39,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 105217076,
+          "ItemName": "Zed Dog",
+          "Rarity": 1,
+          "MinValueInclusive": 1,
+          "MaxValueExclusive": 501,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Rainy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "11",
+      "Name": "44 Liquidation",
+      "MinScrap": 28,
+      "MaxScrapExclusive": 45,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 37,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 40,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 16,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 55,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1673206933,
+          "ItemName": "Fancy lamp",
+          "Rarity": 27,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 321,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 20,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1237810556,
+          "ItemName": "Jar of pickles",
+          "Rarity": 8,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 10,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1768180206,
+          "ItemName": "Golden cup",
+          "Rarity": 27,
+          "MinValueInclusive": 100,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 942725122,
+          "ItemName": "Painting",
+          "Rarity": 14,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 311,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 11311458,
+          "ItemName": "Bell",
+          "Rarity": 49,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1974712455,
+          "ItemName": "Ring",
+          "Rarity": 15,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 201,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 49,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1092750697,
+          "ItemName": "Toothpaste",
+          "Rarity": 31,
+          "MinValueInclusive": 35,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 960770791,
+          "ItemName": "Brush",
+          "Rarity": 16,
+          "MinValueInclusive": 20,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 725027776,
+          "ItemName": "Pill bottle",
+          "Rarity": 15,
+          "MinValueInclusive": 40,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1371745396,
+          "ItemName": "Perfume bottle",
+          "Rarity": 14,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 261,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1495750731,
+          "ItemName": "Mug",
+          "Rarity": 21,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 171,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 42,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 37,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1946320473,
+          "ItemName": "Hairdryer",
+          "Rarity": 49,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 45,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 495388324,
+          "ItemName": "Red soda",
+          "Rarity": 48,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 226,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1046283282,
+          "ItemName": "Teeth",
+          "Rarity": 37,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1680385413,
+          "ItemName": "Magic 7 ball",
+          "Rarity": 30,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 2044362862,
+          "ItemName": "Rubber Ducky",
+          "Rarity": 47,
+          "MinValueInclusive": 5,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 47,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 39,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 31,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 13,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 17,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 930571994,
+          "ItemName": "Tragedy",
+          "Rarity": 46,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 282248098,
+          "ItemName": "Comedy",
+          "Rarity": 43,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1979021990,
+          "ItemName": "Whoopie cushion",
+          "Rarity": 43,
+          "MinValueInclusive": 15,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Stormy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Rainy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Flooded",
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "Id": "12",
+      "Name": "5 Embrion",
+      "MinScrap": 14,
+      "MaxScrapExclusive": 17,
+      "IsChallengeFile": false,
+      "SpawnableScrap": [
+        {
+          "ItemId": 253300282,
+          "ItemName": "Large axle",
+          "Rarity": 81,
+          "MinValueInclusive": 90,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1682531814,
+          "ItemName": "V-type engine",
+          "Rarity": 80,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 786418168,
+          "ItemName": "Plastic fish",
+          "Rarity": 28,
+          "MinValueInclusive": 70,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 701558109,
+          "ItemName": "Metal sheet",
+          "Rarity": 100,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 56,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 303772523,
+          "ItemName": "Big bolt",
+          "Rarity": 66,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 81,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 981360405,
+          "ItemName": "Toy cube",
+          "Rarity": 25,
+          "MinValueInclusive": 60,
+          "MaxValueExclusive": 111,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1493250436,
+          "ItemName": "Laser pointer",
+          "Rarity": 6,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 251,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1962804381,
+          "ItemName": "Bottles",
+          "Rarity": 52,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 141,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 646764934,
+          "ItemName": "Remote",
+          "Rarity": 28,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 121,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 637089745,
+          "ItemName": "Cookie mold pan",
+          "Rarity": 52,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 101,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 251645038,
+          "ItemName": "Toy robot",
+          "Rarity": 43,
+          "MinValueInclusive": 140,
+          "MaxValueExclusive": 221,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 748084043,
+          "ItemName": "Magnifying glass",
+          "Rarity": 14,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 151,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1393385808,
+          "ItemName": "Stop sign",
+          "Rarity": 28,
+          "MinValueInclusive": 50,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 10347079,
+          "ItemName": "Tea kettle",
+          "Rarity": 23,
+          "MinValueInclusive": 80,
+          "MaxValueExclusive": 141,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1046283282,
+          "ItemName": "Teeth",
+          "Rarity": 12,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 211,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1934760839,
+          "ItemName": "Old phone",
+          "Rarity": 8,
+          "MinValueInclusive": 120,
+          "MaxValueExclusive": 161,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1256791633,
+          "ItemName": "Airhorn",
+          "Rarity": 23,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 225846342,
+          "ItemName": "Clown horn",
+          "Rarity": 18,
+          "MinValueInclusive": 130,
+          "MaxValueExclusive": 181,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1774772929,
+          "ItemName": "Yield sign",
+          "Rarity": 14,
+          "MinValueInclusive": 45,
+          "MaxValueExclusive": 91,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 155403741,
+          "ItemName": "Homemade flashbang",
+          "Rarity": 9,
+          "MinValueInclusive": 25,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1729879238,
+          "ItemName": "Gift",
+          "Rarity": 17,
+          "MinValueInclusive": 30,
+          "MaxValueExclusive": 71,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 1257211724,
+          "ItemName": "Easter egg",
+          "Rarity": 52,
+          "MinValueInclusive": 55,
+          "MaxValueExclusive": 131,
+          "TwoHanded": false
+        },
+        {
+          "ItemId": 986753552,
+          "ItemName": "Control pad",
+          "Rarity": 14,
+          "MinValueInclusive": 85,
+          "MaxValueExclusive": 161,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1592453605,
+          "ItemName": "Toilet paper",
+          "Rarity": 45,
+          "MinValueInclusive": 150,
+          "MaxValueExclusive": 221,
+          "TwoHanded": true
+        },
+        {
+          "ItemId": 1750501098,
+          "ItemName": "Soccer ball",
+          "Rarity": 26,
+          "MinValueInclusive": 110,
+          "MaxValueExclusive": 181,
+          "TwoHanded": true
+        }
+      ],
+      "Weathers": [
+        {
+          "WeatherType": "Foggy",
+          "Weight": 1
+        },
+        {
+          "WeatherType": "Eclipsed",
+          "Weight": 1
+        }
+      ]
+    }
+  ]
+}
